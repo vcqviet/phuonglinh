@@ -1,0 +1,151 @@
+app.customer: Khách hàng
+app.news: Tin tức
+app.news-description: 'Đừng bỏ lỡ về chúng tôi và hãy cùng theo dõi tin tức mới nhất của chúng tôi!'
+app.contact: Liên hệ
+app.cart.info: Giỏ hàng
+app.checkout: Thanh toán
+app.login: Đăng nhập
+app.product: Sản Phẩm
+app.customer-feedback: Hình ảnh khách hàng
+app.customer-feedback-description: 'Giống như quần áo của chúng tôi? Sau đó, theo dõi nguồn cấp dữ liệu @machnhaduong Tag chúng tôi là một trong những #machnhaduong '
+app.load-more: Xem thêm...
+app.quick-lick: Liên kết nhanh
+app.follow-us: Về chúng tôi
+app.we-support: Chúng tôi hỗ trợ
+app.accessibility: Khả năng tiếp cận
+app.delivery: 'Vận chuyển và giao hàng'
+app.payment: Đặt hàng và thanh toán
+app.return: Trả về
+app.size-guide: Hướng dẫn kích thước
+app.we-support-description: 'Bạn muốn tất cả các phong cách mới nhất của chúng tôi, cập nhật độc quyền và giảm giá đáng yêu vào hộp thư đến của bạn? Nhập email của bạn và bạn đang ở: '
+app.homepage: Trang chủ
+app.sort-by: Sắp xếp
+app.best-selling: Bán chạy nhất
+app.name-AZ: Tên từ A-Z
+app.name-ZA: Tên từ Z-A
+app.price-up: Giá từ thấp đến cao
+app.price-down: Giá từ cao xuống thấp
+app.date-old: Thời gian sau tới trước
+app.date-new: Thời gian trước đến sau
+app.product-category: Categories
+app.quantity: Số lượng
+app.select-size: Chọn size
+app.add-to-cart: Thêm vào giỏ hàng
+app.request-rock: Yêu cầu
+app.share: Chia sẻ
+app.related-product: Sản phẩm liên quan
+app.news-related: Tin liên quan
+app.full-name: Họ và tên
+app.email: Địa chỉ email
+app.email-required: Vui lòng nhập email của bạn!
+app.email-invalid: Địa chỉ email không hợp lệ!
+app.order-number: Số điện thoại
+app.mesage: Tin nhắn
+app.send-contact: Gửi liên hệ
+app.signin: Đăng nhập
+app.password: Mật khẩu
+app.forgot-password: Quên mật khẩu
+app.register: Đăng ký
+app.signin-social: Đăng nhập
+app.user: Tài khoản
+app.register-description: 'Nhập địa chỉ email và mật khẩu của bạn để tạo tài khoản của bạn.'
+app.email-existing: Email hiện có, vui lòng nhập email của bạn!
+app.passwordconfirm: Xác nhận mật khẩu
+app.password-required: Vui lòng nhập mật khẩu của bạn!
+app.passwordconfirm-invalid: Xác nhận mật khẩu không hợp lệ!
+app.return-to-product: Trở lại cửa hàng
+app.register-success: Đăng ký tài khoản thành công!
+app.recover: Quên mật khẩu
+app.recover-description: Nhập địa chỉ email của bạn để thiết lập lại mật khẩu của bạn.
+app.recover-password: Gửi yêu cầu
+app.your-email: Email
+app.submit: Ok
+app.user-not-found: Email không tồn tại!
+app.information: Thông tin
+app.order-history: Lịch sử
+app.phone-number: Số điện thoại
+app.address: Địa chỉ
+app.current-password: Mật khẩu
+app.edit: Cập nhật
+app.full-name-required: Vui lòng nhập tên đầy đủ của bạn!
+app.phone-number-required: Vui lòng nhập số điện thoại của bạn!
+app.phone-number-invalid: Số điện thoại của bạn không hợp lệ!
+app.current-password-required: Vui lòng nhập mật khẩu hiện tại!
+app.my-profile: Thông tin của tôi
+app.logout: Đăng xuất
+app.update-info-success: Sửa thành công
+app.current-password-invalid: Mật khẩu không hợp lệ !
+app.login-failed: Tài khoản hoặc mật khẩu không đúng !
+app.login-success: Đăng nhập thành công !
+app.add-to-cart-complete: Thêm sản phẩm thành công !
+app.add-to-cart-error: Vui lòng chọn size trước khi thêm !
+app.like: Thích
+tv-show.type: Kiểu
+
+app.fashion-academy: Học viện thời trang Việt Nam
+app.name-shop: VietNam Fashion Academy
+app.gallery: SẢN PHẨM CỦA HỌC VIÊN
+app.partner: ĐỐI TÁC
+app.tv-show: VFA CHANEL
+app.event: SỰ KIỆN
+app.about: GIỚI THIỆU
+app.teacher: GIẢNG VIÊN
+app.course: CÁC CHƯƠNG TRÌNH & KHÓA HỌC
+app.comment: NHẬN XÉT HỌC VIÊN
+app.registration-advice: ĐĂNG KÝ TƯ VẤN
+app.send: Gửi
+
+app.home-page: Trang Chủ
+app.about-page: Giới Thiệu
+app.course-page: Khóa Học
+app.gallery-page: Thư Viện
+app.tvshow-page: VFA Chanel
+app.partner-page: Đối Tác
+app.news-page: Tin Tức
+app.contact-page: Liên Hệ
+app.name-course: Học Viện Thời Trang Việt Nam
+app.select: Chọn danh mục
+app.registration: Đăng ký
+app.menu: MENU
+app.write-information: Vui lòng điền đầy đủ thông tin vào form bên dưới để gửi yêu cầu liên hệ hoặc để đăng ký nhận tư vấn từ VFA.
+app.program-course: Các chương trình & Khoá học
+app.registration-course: Đăng ký khoá học
+app.please: Vui lòng điền đầy đủ thông tin vào form bên dưới để đăng ký khoá học này.
+app.cost-course: đ
+app.search: Tìm kiếm nâng cao
+app.album: Xem Album khác
+app.course-detail: Các Khoá Học
+app.detail: Xem Chi tiết
+app.news-event: Tin Tức & Sự Kiện
+app.news-detail: Các tin liên quan
+app.see-more: Xem thêm...
+app.comment-fb: Bình luận
+app.you-advice: Bạn cần tư vấn?
+app.register-now: Đăng ký ngay
+app.address-shop: 184 – 17 Điện Biên Phủ, P.17, Q. Bình Thạnh, TP. HCM
+app.work-time: Giờ làm việc từ 9h đến 21h, từ Thứ Hai đến Chủ Nhật
+app.phone: 092 303 11 88
+app.email-shop: xinchao@vietnamfashionacademy.vn
+
+app.you-need-info: Quý học viên cần thêm thông tin, vui lòng liên hệ
+app.another-course: Các khoá học khác
+app.cost: Học phí
+app.course-list: Danh mục khoá học
+app.keyword: Từ khóa
+app.search-key: Tìm kiếm
+app.content: Nội dung
+app.galleries: Thư viện
+app.send-success: Thành công!
+app.validate-full-name: Nhập họ & tên
+app.validate-phone-number: Nhập số điện thoại
+app.validate-email-error: Nhập email
+app.validate-search: Nhập từ khóa
+app.registration-success: Đăng ký khóa học thành công
+app.search-all: Danh mục
+app.search-cost: Chọn giá
+app.recaptcha-error: Vui lòng xác nhận tôi không phải người máy !
+app.send-contact-failed: Gửi liên hê không thành công, vui lòng thử lại !
+app.contact-success: Cám ơn bạn đã gửi liên hệ !
+app.phone-number-error: Số điện thoại chưa đúng !
+app.email-error: Email chưa đúng !
+grid.set-order-success: Thay đổi thành công !

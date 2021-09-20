@@ -1,0 +1,53 @@
+hk_admin.customer:
+    path: /customer/{page}/{limit}
+    controller: HK\AdminBundle\Controller\CustomerController::index
+    defaults:
+        page: 1
+        limit: 20
+    requirements:
+        page: \d+
+        limit: \d+
+hk_admin.customer.filter:
+    path: /customer/filter/{page}/{limit}
+    controller: HK\AdminBundle\Controller\CustomerController::filter
+    defaults:
+        page: 1
+        limit: 20
+    requirements:
+        page: \d+
+        limit: \d+
+hk_admin.customer.lang_item:
+    path: /customer/item-lang
+    controller: HK\AdminBundle\Controller\CustomerController::itemLang
+hk_admin.customer.filter_form:
+    path: /customer/filter-form
+    controller: HK\AdminBundle\Controller\CustomerController::filterForm
+hk_admin.customer.menu_control:
+    path: /customer/menu-control
+    controller: HK\AdminBundle\Controller\CustomerController::menuControl
+hk_admin.customer.add:
+    path: /customer/add
+    controller: HK\AdminBundle\Controller\CustomerController::addEdit
+hk_admin.customer.order:
+    path: /customer/set-order
+    controller: HK\AdminBundle\Controller\CustomerController::order
+    methods:
+    - POST
+hk_admin.customer.edit:
+    path: /customer/edit/{id}
+    controller: HK\AdminBundle\Controller\CustomerController::addEdit
+    defaults:
+        id: -1
+hk_admin.customer.publish:
+    path: /customer/publish
+    controller: HK\AdminBundle\Controller\CustomerController::publish
+    methods:
+    - POST
+hk_admin.customer.delete:
+    path: /customer/delete
+    controller: HK\AdminBundle\Controller\CustomerController::delete
+    methods:
+    - POST
+hk_admin.customer.title-existing:
+    path: /customer/title-existing
+    controller: HK\AdminBundle\Controller\CustomerController::titleLangExisting

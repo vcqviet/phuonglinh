@@ -1,0 +1,267 @@
+{% extends 'admin/master/admin-none-menu.html.twig' %}
+{% block css %}
+    <style type="text/css">
+        #files img {
+            width: 98%;
+        }
+        #files > div {
+            padding-left: 5px;
+            padding-right: 5px;
+            cursor: pointer;
+            margin-bottom: 10px;
+            cursor: pointer;
+        }
+        #files > div.-active {
+            background: rgba(0, 0, 66, 0.3);
+        }
+        #files span {
+            display: block;
+            overflow: hidden;
+            width: 100%;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+    </style>
+{%endblock %}
+{% block script %}
+    <script src="/assets/plugins/bootstrap-treeview-1.2.0/dist/bootstrap-treeview.min.js"></script>
+    <script type="text/javascript">
+        var BMEDIA = {
+            path: '',
+            file: null,
+            reinitFile: function () {
+                $('#files > div').unbind('click').click(function () {
+                    $ob = $(this);
+                    $('#files > div').removeClass('-active');
+                    $ob.addClass('-active');
+                    BMEDIA.file = $ob;
+                });
+                $('#files > div').unbind('dblclick').dblclick(function () {
+                    if (BMEDIA.file == null) {
+                        BALERT.show('', "{{'media-file.file-not-select'|trans}}", BALERT.TYPE.error);
+                        return false;
+                    };
+                    if(parent){
+                        parent.BPHOTO.iwSelect(BMEDIA.file.find('img').attr('src'));
+                    }
+                    if (window.opener) {
+                        var getUrlParam = function (paramName) {
+                            var reParam = new RegExp('(?:[\?&]|&)' + paramName + '=([^&]+)', 'i');
+                            var match = window.location.search.match(reParam);
+
+                            return(match && match.length > 1) ? match[1] : null;
+                        }
+
+                        window.opener.CKEDITOR.tools.callFunction(getUrlParam('CKEditorFuncNum'), BMEDIA.file.find('img').attr('src'));
+                        window.close();
+                    }
+
+                });
+                BMEDIA.file = null;
+            },
+            renderFile: function (data) {
+                var $div = $('#files');
+                $div.html('');
+                for (var i = 0; i < data.length; i++) {
+                    $div.append('<div class="col-sm-3 col-md-2 text-center" data-name="' + data[i].name + '" data-realpath="' + data[i].real + '" title="' + data[i].name + '"><img src="' + data[i].path + '" class=" align-self-center" /> <br/> <span class=" align-self-center">' + data[i].name + '</span></div>');
+                }
+                BMEDIA.reinitFile();
+            },
+            loadFile: function (path) {
+                BAJAX.send("{{path('hk_admin.mediafile.file')}}", {
+                    'keyword': $('#keyword').val(),
+                    'path': path
+                }, function (data) {
+                    if (BCOMMON.isOk(data)) {
+                        BMEDIA.renderFile(data.data);
+                        return;
+                    }
+                    BALERT.show('', data.error, BALERT.TYPE.error);
+                });
+            },
+            loadFolder: function () {
+                BAJAX.send("{{path('hk_admin.mediafile.folder')}}", {}, function (data) {
+                    if (BCOMMON.isOk(data)) {
+                        $('#treeview').treeview({
+                            'data': data.data,
+                            'levels': 9,
+                            'onNodeSelected': function (e, item) {
+                                BMEDIA.loadFile(item.href);
+                                BMEDIA.path = item.href;
+                            }
+                        });
+                        return;
+                    }
+                    BALERT.show('', data.error, BALERT.TYPE.error);
+                });
+            }
+        };
+        $(function () {
+            $('div#media_file .form-group .col-sm-3').remove();
+            $('#media_file_Save').html('<i class="fa fa-upload"></i>');
+            BMEDIA.loadFolder();
+            BMEDIA.loadFile(BMEDIA.path);
+            $('#rb-refresh').click(function () {
+                BMEDIA.path = '';
+                BMEDIA.loadFolder();
+                BMEDIA.loadFile(BMEDIA.path);
+            });
+            $('#bsearch').click(function () {
+                BMEDIA.loadFile(BMEDIA.path);
+            });
+            $('#rb-file-delete').click(function () {
+                if (BMEDIA.file == null) {
+                    BALERT.show('', "{{'media-file.file-not-select'|trans}}", BALERT.TYPE.error);
+                    return false;
+                }
+                BMODAL.setText("{{'media-file.delete-confirm'|trans}}");
+                // BMODAL.setTitle();
+                BMODAL.setType(BMODAL.TYPE.confirm);
+                BMODAL.show(function () {
+                    BAJAX.send("{{path('hk_admin.mediafile.file_delete')}}", {
+                        'path': BMEDIA.file.attr('data-realpath')
+                    }, function (data) {
+                        if (BCOMMON.isOk(data)) {
+                            BMEDIA.file.remove();
+                            BMEDIA.file = null;
+                            BALERT.show('', data.data.message, BALERT.TYPE.success);
+                            return;
+                        }
+                        BALERT.show('', data.error, BALERT.TYPE.error);
+                    }, 'POST');
+                });
+            });
+            $('#rb-folder-delete').click(function () {
+                if (BMEDIA.path == '') {
+                    BALERT.show('', "{{'media-file.folder-not-select'|trans}}", BALERT.TYPE.error);
+                    return false;
+                }
+                BMODAL.setText("{{'media-file.delete-confirm'|trans}}");
+                // BMODAL.setTitle();
+                BMODAL.setType(BMODAL.TYPE.confirm);
+                BMODAL.show(function () {
+                    BAJAX.send("{{path('hk_admin.mediafile.folder_delete')}}", {
+                        'path': BMEDIA.path
+                    }, function (data) {
+                        if (BCOMMON.isOk(data)) {
+                            $('#rb-refresh').trigger('click');
+                            BALERT.show('', data.data.message, BALERT.TYPE.success);
+                            return;
+                        }
+                        BALERT.show('', data.error, BALERT.TYPE.error);
+                    }, 'POST');
+                });
+            });
+            $('#rb-folder-create').click(function () {
+                $('#dir-title').text(BMEDIA.path == '' ? 'root' : BMEDIA.path);
+                $('#create-dir').modal('show');
+            });
+            $('#bmkdir').click(function () {
+                if ($('#tdir').val() == '') {
+                    BALERT.show('', "{{'media-file.folder-not-input'|trans}}", BALERT.TYPE.error);
+                    return false;
+                }
+                BAJAX.send("{{path('hk_admin.mediafile.folder_create')}}", {
+                    'path': BMEDIA.path,
+                    'dir': $('#tdir').val()
+                }, function (data) {
+                    if (BCOMMON.isOk(data)) {
+                        $('#create-dir').modal('hide');
+                        $('#tdir').val('');
+                        $('#rb-refresh').trigger('click');
+                        BALERT.show('', data.data.message, BALERT.TYPE.success);
+                        return;
+                    }
+                    BALERT.show('', data.error, BALERT.TYPE.error);
+                }, 'POST');
+            });
+        });
+        function bmedia_formBefore() {
+            if ($('#media_file_file').val() == '') {
+                BALERT.show('', "{{'media-file.file-not-select'|trans}}", BALERT.TYPE.error);
+                return false;
+            }
+            if (BMEDIA.path == '') {
+                BALERT.show('', "{{'media-file.folder-not-select'|trans}}", BALERT.TYPE.error);
+                return false;
+            }
+            $('#media_file_path').val(BMEDIA.path);
+            return true;
+        }
+        function bmedia_formAfter(data) {
+            if (BCOMMON.isOk(data)) {
+                $('form')[0].reset();
+                BMEDIA.loadFile(BMEDIA.path);
+                BALERT.show('', data.data.message, BALERT.TYPE.success);
+                return;
+            }
+            BALERT.show('', data.error, BALERT.TYPE.error);
+        }
+    </script>
+{% endblock %}
+{% block body_content %}
+    <section class="hk-sec-wrapper" id="rb-section-form" rb-data-is-multi-languages="0" rb-data-url="">
+        <div class="row border-bottom pb-10">
+            <div class="col-sm">
+                <div class="float-left">
+                    <ul class="nav">
+                        <li class="nav-item mr-5">
+                            <a class="nav-link btn btn-primary" href="javascript:void(0)" title="{{'media-file.refresh'|trans}}" id="rb-refresh">
+                                <i class="fas fa-redo"></i>
+                            </a>
+                        </li>
+                        <li class="nav-item mr-5">
+                            <a class="nav-link btn btn-primary" href="javascript:void(0)" title="{{'media-file.add-folder'|trans}}" id="rb-folder-create">
+                                <i class="fas fa-folder-plus"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="float-right">
+                    <ul class="nav mr-auto justify-content-end">
+                        <li class="nav-item border border-info mr-10">
+                            {{form(form, {attr:{class: 'form-inline'}})}}
+                            </li>
+                            <li class="nav-item border border-info">
+                                <input type="text" class="search border-0 px-5" style="outline: none" name="keyword" id="keyword" placeholder="{{'media-file.keyword'|trans}}"/>
+                                <button class="search btn btn-info rounded-0" id="bsearch" style="margin-right: -1px;">
+                                    <i class="fa fa-search"></i>
+                                </button>
+                            </li>
+
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+            <div class="row mt-10">
+                <div class="col-md-3">
+                    <div id="treeview"></div>
+                </div>
+                <div class="col-md-9">
+                    <div class="row" id="files"></div>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+        </section>
+        <!-- ADD MODAL -->
+        <div class="modal fade" id="create-dir" role="dialog" tabindex="-1">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">{{'media-file.add-folder'|trans}}
+                            [<span id="dir-title"></span>]</h5>
+                        <button aria-label="Close" class="close" data-dismiss="modal" type="button">
+                            <span aria-hidden="true">×</span>
+                        </button>
+                    </div>
+                    <div class="modal-body"><input id="tdir" name="tdir" style="width: 100%" type="text" value=""/></div>
+                    <div class="modal-footer">
+                        <button class="btn btn-secondary" data-dismiss="modal" type="button">{{'lbl.modal.cancel'|trans}}</button>
+                        <button class="btn btn-primary" id="bmkdir" type="button">{{'lbl.action-add'|trans}}</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /.modal -->
+    {% endblock %}

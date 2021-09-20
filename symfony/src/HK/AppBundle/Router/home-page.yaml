@@ -1,0 +1,55 @@
+hk.home.login:
+    path: /
+    controller: HK\AppBundle\Controller\HomeController::index
+hk.home.telesale:
+    path: /telesale-management
+    controller: HK\AppBundle\Controller\HomeController::telesale
+hk.home.order-calling:
+    path: /order-calling
+    controller: HK\AppBundle\Controller\HomeController::orderCalling
+
+hk.home.update-order-status:
+    path: /order/update-order-status
+    controller: HK\AppBundle\Controller\HomeController::orderUpdateStatus
+    methods:
+    - POST
+hk.home.update-order-ward:
+    path: /order/update-ward
+    controller: HK\AppBundle\Controller\HomeController::orderUpdateWard
+    methods:
+    - POST
+hk.home.update-order-district:
+    path: /order/update-district
+    controller: HK\AppBundle\Controller\HomeController::orderUpdateDistrict
+    methods:
+    - POST
+hk.home.update-order-city:
+    path: /order/update-city
+    controller: HK\AppBundle\Controller\HomeController::orderUpdateCity
+    methods:
+    - POST
+hk.home.get-district:
+    path: /get-district
+    controller: HK\AppBundle\Controller\CommonController::getDistrict
+    methods:
+    - GET
+hk.home.get-ward:
+    path: /get-ward
+    controller: HK\AppBundle\Controller\CommonController::getWard
+    methods:
+    - GET
+hk.home.update-fullname:
+    path: /order/update-fullname
+    controller: HK\AppBundle\Controller\HomeController::orderUpdateFullName
+    methods:
+    - POST
+hk.home.update-address:
+    path: /order/update-address
+    controller: HK\AppBundle\Controller\HomeController::orderUpdateAddress
+    methods:
+    - POST
+hk.home.update-remark:
+    path: /order/update-remark
+    controller: HK\AppBundle\Controller\HomeController::orderUpdateRemark
+    methods:
+    - POST

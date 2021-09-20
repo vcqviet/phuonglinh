@@ -1,0 +1,11 @@
+services:
+    _defaults:
+        public: false
+        autowire: true
+        autoconfigure: true
+
+    # Uncomment any lines below to activate that Twig extension
+    HK\CoreBundle\Twig\TwigExtension: ~
+    #Twig\Extensions\DateExtension: ~
+    #Twig\Extensions\IntlExtension: ~
+    #Twig\Extensions\TextExtension: ~

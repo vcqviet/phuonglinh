@@ -1,0 +1,30 @@
+hk_admin.mediafile:
+    path: /media-file
+    controller: HK\AdminBundle\Controller\MediaFileController::indexMedia
+hk_admin.mediafile.subin:
+    path: /media-subin
+    controller: HK\AdminBundle\Controller\MediaFileController::subin
+hk_admin.mediafile.file_delete:
+    path: /media-file/file-delete
+    controller: HK\AdminBundle\Controller\MediaFileController::fileDelete
+    methods:
+    - POST
+hk_admin.mediafile.file:
+    path: /media-file/file/{page}/{limit}
+    controller: HK\AdminBundle\Controller\MediaFileController::getFiles
+    defaults:
+        page: 1,
+        limit: 100
+hk_admin.mediafile.folder_delete:
+    path: /media-file/folder-delete
+    controller: HK\AdminBundle\Controller\MediaFileController::folderDelete
+    methods:
+    - POST
+hk_admin.mediafile.folder_create:
+    path: /media-file/folder-create
+    controller: HK\AdminBundle\Controller\MediaFileController::createDirectory
+    methods:
+    - POST
+hk_admin.mediafile.folder:
+    path: /media-file/folder
+    controller: HK\AdminBundle\Controller\MediaFileController::directory

@@ -1,0 +1,14 @@
+swiftmailer:
+    transport: '%env(MAIL_SMTP)%'
+    username: '%env(MAIL_USER_NAME)%'
+    password: '%env(MAIL_USER_PASSWORD)%'
+    host: '%env(MAIL_HOST)%'
+    port: '%env(MAIL_PORT)%'
+    encryption: '%env(MAIL_ENCRYPTION)%'
+    auth-mode: '%env(MAIL_AUTH_MODE)%'
+    spool: { type: 'memory' }
+    stream_options:
+        ssl:
+            allow_self_signed: true
+            verify_peer: false
+            verify_peer_name: false

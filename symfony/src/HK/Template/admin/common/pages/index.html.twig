@@ -1,0 +1,15 @@
+{% extends 'admin/master/admin.html.twig' %}
+{% block css %}{% endblock %}
+{% block body_content %}
+    <section class="hk-sec-wrapper">
+        <div class="row rb-filter-form-render rb-float-right mr-5" rb-data-url="{{path(router_filter_form)}}" rb-data-url-filter="{{path(router_filter)}}"></div>
+        <div class="rb-clear"></div>
+    </section>
+    <div class="row rb-admin-menu-control" rb-data-url="{{path(router_menu_control)}}" id="rb-admin-menu-control" rb-data-admin-checked-require-error="{{'lbl.menu.checked-require'|trans}}"></div>
+    <section class="hk-sec-wrapper">
+        <div class="row rb-table-render" rb-data-url-base="{{path(router)}}" rb-data-is-published-text="{{'lbl.action-publish'|trans}}"></div>
+        <div class="row rb-limit-render rb-float-left ml-5" rb-data-limit-text="{{'lbl.limit-item'|trans}}" rb-data-limit="{{'PAGINATOR_LIMIT'|env}}"></div>
+        <div class="row rb-paginator-render rb-float-right mr-5" rb-data-paginator-length="{{'PAGINATOR_LENGTH'|env}}"></div>
+        <div class="rb-clear"></div>
+    </section>
+{% endblock %}

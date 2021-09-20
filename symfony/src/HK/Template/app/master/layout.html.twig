@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- Toggles CSS -->
+        <link href="/assets/plugins/jquery-toggles/css/toggles.css" rel="stylesheet" type="text/css"/>
+        <link
+        href="/assets/plugins/jquery-toggles/css/themes/toggles-light.css" rel="stylesheet" type="text/css"/>
+
+        <!-- Toastr CSS -->
+        <link
+        href="/assets/plugins/jquery-toast-plugin/dist/jquery.toast.min.css" rel="stylesheet" type="text/css"/>
+        <!-- Custom CSS -->
+        <link href="/assets/admin/css/style.css" rel="stylesheet" type="text/css"/>
+
+        <link href="/assets/plugins/bootstrap-datepicker-1.9.0/css/bootstrap-datepicker.min.css" rel="stylesheet" media="screen">
+        <link href="/assets/css/common-custom.css" rel="stylesheet" type="text/css"/>
+        <link href="/assets/css/app.css" rel="stylesheet" type="text/css"/> {% block css %}{% endblock %}
+        </head>
+        <body>
+            <div class="wrapper">
+                {{ render(controller('HK\\AppBundle\\Controller\\CommonController::header', {})) }}
+
+                {% block body_content %}{% endblock %}
+
+                {{ render(controller('HK\\AppBundle\\Controller\\CommonController::footer', {})) }}
+
+            </div>
+
+            <!-- jQuery -->
+            <script src="/assets/plugins/jquery-3.4.0/dist/jquery.min.js"></script>
+
+            <!-- Bootstrap Core JavaScript -->
+            <script src="/assets/plugins/popper.js/dist/umd/popper.min.js"></script>
+            <script src="/assets/plugins/bootstrap-4.3.1/dist/js/bootstrap.min.js"></script>
+            <script src="/assets/plugins/bootstrap-typeahead/bootstrap3-typeahead.min.js"></script>
+
+            <!-- Slimscroll JavaScript -->
+            <script src="/assets/admin/js/jquery.slimscroll.js"></script>
+
+            <!-- Fancy Dropdown JS -->
+            <script src="/assets/admin/js/dropdown-bootstrap-extended.js"></script>
+
+
+            <!-- Toggles JavaScript -->
+            <script src="/assets/plugins/jquery-toggles/toggles.min.js"></script>
+            <!-- Toastr JS -->
+            <script src="/assets/plugins/jquery-toast-plugin/dist/jquery.toast.min.js"></script>
+
+
+            <script src="/assets/admin/js/hk-init-min.js"></script>
+            <script src="/assets/admin/js/hk-data-min.js"></script>
+            <script src="/assets/admin/js/hk-common-min.js"></script>
+            {% block script %}{% endblock %}
+        </body>
+    </html>

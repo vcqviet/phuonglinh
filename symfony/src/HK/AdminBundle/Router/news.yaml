@@ -1,0 +1,53 @@
+hk_admin.news:
+    path: /news/{page}/{limit}
+    controller: HK\AdminBundle\Controller\NewsController::index
+    defaults:
+        page: 1
+        limit: 20
+    requirements:
+        page: \d+
+        limit: \d+
+hk_admin.news.filter:
+    path: /news/filter/{page}/{limit}
+    controller: HK\AdminBundle\Controller\NewsController::filter
+    defaults:
+        page: 1
+        limit: 20
+    requirements:
+        page: \d+
+        limit: \d+
+hk_admin.news.lang_item:
+    path: /news/item-lang
+    controller: HK\AdminBundle\Controller\NewsController::itemLang
+hk_admin.news.filter_form:
+    path: /news/filter-form
+    controller: HK\AdminBundle\Controller\NewsController::filterForm
+hk_admin.news.menu_control:
+    path: /news/menu-control
+    controller: HK\AdminBundle\Controller\NewsController::menuControl
+hk_admin.news.add:
+    path: /news/add
+    controller: HK\AdminBundle\Controller\NewsController::addEdit
+hk_admin.news.order:
+    path: /news/set-order
+    controller: HK\AdminBundle\Controller\NewsController::order
+    methods:
+    - POST
+hk_admin.news.edit:
+    path: /news/edit/{id}
+    controller: HK\AdminBundle\Controller\NewsController::addEdit
+    defaults:
+        id: -1
+hk_admin.news.publish:
+    path: /news/publish
+    controller: HK\AdminBundle\Controller\NewsController::publish
+    methods:
+    - POST
+hk_admin.news.delete:
+    path: /news/delete
+    controller: HK\AdminBundle\Controller\NewsController::delete
+    methods:
+    - POST
+hk_admin.news.title-existing:
+    path: /news/title-existing
+    controller: HK\AdminBundle\Controller\NewsController::titleLangExisting

@@ -1,0 +1,33 @@
+table.table-hover>tbody>tr:hover {
+    background: #F9E79F !important;
+}
+@media (min-width: 1200px){
+    .container {
+        max-width: 98%;
+    }
+}
+.rb{
+    &-sup-admin-menu {
+        margin-top: -12px;
+        margin-bottom: -5px;
+    }
+    &-nav-lang{
+        margin-top: -20px;
+    }
+    &-form-edit-add{
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+    &-limit-render{
+        min-width: 250px;
+    }
+}
+.badge {
+    &.badge-indicator {
+        bottom: 7px;
+        left: 2px;
+    }
+}
+.hk-wrapper.hk-vertical-nav .hk-nav.hk-nav-dark .navbar-nav .nav-item .nav-link.-active {
+    color: rgba(255, 255, 255, 0.8);
+}

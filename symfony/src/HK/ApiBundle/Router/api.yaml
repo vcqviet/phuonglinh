@@ -1,0 +1,30 @@
+hk.api.cates:
+    path: /cates
+    controller: HK\ApiBundle\Controller\CateController::cates
+    methods:
+    - GET
+hk.api.slide:
+    path: /slides
+    controller: HK\ApiBundle\Controller\SlideController::slides
+    methods:
+    - GET
+hk.api.news_detail:
+    path: /news/{id}
+    controller: HK\ApiBundle\Controller\NewsController::detail
+    methods:
+    - GET 
+hk.api.news:
+    path: /news
+    controller: HK\ApiBundle\Controller\NewsController::news
+    methods:
+    - GET 
+hk.api.tracking_check:
+    path: /tracking/{deviceId}
+    controller: HK\ApiBundle\Controller\TrackingInfoController::isExisting
+    methods:
+    - GET 
+hk.api.tracking_add:
+    path: /tracking
+    controller: HK\ApiBundle\Controller\TrackingInfoController::add
+    methods:
+    - POST 

@@ -1,0 +1,48 @@
+{% spaceless %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}
+        {{'lbl.login-title'|trans}}
+    {% endblock %}</title>
+    <link rel="stylesheet" type="text/css" href="/assets/plugins/bootstrap-4.3.1/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" type="text/css" href="/assets/admin/css/fontawesome-5.8-all.min.css"/>
+    <link rel="stylesheet" type="text/css" href="/assets/admin/css/iofrm-style.css"/>
+    <link rel="stylesheet" type="text/css" href="/assets/admin/css/iofrm-theme9.css"/>
+    <link rel="stylesheet" type="text/css" href="/assets/admin/css/common.css"/>
+    {% block css %} {% endblock %}
+</head>
+<body>
+    <div class="form-body">
+        <div class="row">
+            <div class="img-holder">
+                <div class="bg"></div>
+                <div class="info-holder">
+                    <h3>{{'lbl.login-form-left-title'|trans}}</h3>
+                    <p>{{'lbl.login-form-left-description'|trans}}</p>
+                    <img src="/assets/admin/img/graphic5.svg" alt="">
+                </div>
+            </div>
+            <div class="form-holder">
+                <div class="form-content">
+                    <div class="form-items">
+                        <div class="">
+                            <div class="logo">
+                                <img class="logo-size" src="/assets/admin/img/logo.png" alt="HK-cms">
+                            </div>
+                        </div>
+                        {% block body %} {% endblock %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="/assets/plugins/jquery-3.4.0/dist/jquery.min.js"></script>
+    <script src="/assets/admin/js/main.js"></script>
+    <script src="/assets/plugins/bootstrap-4.3.1/dist/js/bootstrap.min.js"></script>
+    <script src="/assets/admin/js/popper.min.js"></script>
+    {% block body_script %}{% endblock %}
+</body>
+</html>
+{% endspaceless %}

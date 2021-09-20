@@ -1,0 +1,310 @@
+lbl.language.en: English
+lbl.language.vi: Tiếng Việt
+lbl.language.ja: 日本人
+lbl.language.ch: 中文
+lbl.admin-title: HK CMS - Version 1.0.0
+lbl.login-form-left-title: Đăng nhập hệ thống quản trị
+lbl.login-form-left-description: Nhập vào email hoặc số điện thoại để đăng nhập.
+lbl.login-title: Administrator System
+lbl.login-form-email: Email/Điện thoại
+lbl.login-recover: Gửi yêu cầu
+lbl.login: Đăng nhập
+lbl.login-form-password: Mật khẩu
+lbl.login-remember-me: Nhớ đăng nhập
+lbl.login-forgot-password: Quên mật khẩu
+lbl.login-recover-success: Yêu cầu lấy lại mật khẩu thành công. Vui lòng kiểm tra email và làm theo các hướng dẫn.
+lbl.login-form-password-confirm: Nhập lại mật khẩu
+lbl.login-reset: Đổi mật khẩu
+lbl.login-reset-success: Mật khẩu đã được thay đổi thành công !
+lbl.login-recover-subject: Yêu cầu thay đổi mật khầu từ %domain%
+lbl.login-reset-subject: Mật khẩu đã được thay đổi thành công từ %domain%
+lbl.login-reset-invalid-password: Mật khẩu chưa chính xác.
+lbl.login-forgot-not-found: Không tìm thấy thông tin thành viên.
+lbl.cms-system: Hệ thống CMS
+lbl.about-page.title: Tiêu đề
+lbl.action: Thao tác
+lbl.action-edit: Chỉnh sửa
+lbl.limit-item: Hiển thị
+lbl.about-page.content: Nội dung
+lbl.form.button-save: Lưu thông tin
+lbl.title.edit: Chỉnh sửa thông tin
+lbl.form.edit-success: Cập nhật thành công
+lbl.action-add: Thêm
+lbl.user.email-address: Email
+lbl.user.phone-number: Số điện thoại
+lbl.user.role-name: Quyền truy cập
+lbl.is-published: Trạng thái
+lbl.user.email-login: Email
+lbl.user.role: Quyền truy cập
+lbl.user.password-login: Mật khẩu
+lbl.user.password-confirm: Xác nhận mật khẩu
+lbl.user.change-password: Đổi mật khẩu
+lbl.user.logout: Thoát
+lbl.role.role-name: Quyền truy cập
+lbl.user-login-log.time: Thời gian
+lbl.user-login-log.status: Kết quả đăng nhập
+lbl.user-login-log.ip: IP login
+lbl.user-login-log.email: Tên đăng nhập
+lbl.action-lock-ip: Khóa Ip đăng nhập
+lbl.action-confirm-lock-ip: Không cho IP này đăng nhập hệ thống ?
+lbl.user.ip-lock: IP khóa
+lbl.iplock.ip-locked-required: Nhập vào thông tin IP cần khóa.
+lbl.iplock.ip-locked: IP cần khóa
+lbl.menu.add-new: Thêm mới
+lbl.menu.delete: Xóa
+lbl.menu.publish: Mở
+lbl.menu.un-published: Đóng
+lbl.form.save-success: Lưu thông tin thành công
+lbl.role.permission-update-success: Thay đổi quyền truy cập thành công
+lbl.about-page.title-required: Nhập vào tiêu đề
+lbl.menu.checked-require: Chưa chọn thông tin cần thao tác
+lbl.user.email-login-required: Nhập vào email
+lbl.user.phone-number-required: Nhập vào số điện thoại
+lbl.user.password-login-min-erro: Mật khẩu chưa đủ số lượng ký tự tối thiểu
+lbl.user.password-confirm-error: Xác nhận mật khẩu chưa chính xác
+lbl.user.password-login-max-error: Mật khẩu vượt quá mức tối đa
+lbl.form.save-edit-error: Bị lỗi trong quá trình kết nối, vui lòng thử lại !
+lbl.role.role-name-required: Nhập vào quyền truy cập
+lbl.user.password-login-required: Nhập vào mật khẩu đăng nhập
+lbl.user.phone-number-existing: Số điện thoại đã được sử dụng
+lbl.user.email-existing: Email đã được đăng ký trong hệ thống
+lbl.role.access-view: Chỉ xem/theo dõi
+lbl.role.access-edit: Được phép thay đổi
+lbl.role.access-delete: Toàn quyền
+lbl.action-confirm-delete: Xóa thông tin được chọn ?
+lbl.action-delete: Xóa
+lbl.modal.header-confirm: Xác nhận thao tác
+lbl.modal.cancel: Hủy
+lbl.modal.confirm: Ok
+lbl.menu.confirm-delete: Xóa các thông tin được chọn ?
+lbl.action-display-order-up: Sắp xếp - tăng
+lbl.action-display-order-down: Sắp xếp - giảm
+lbl.action-permission: Phân quyền
+lbl.action-publish: Hiện/Ẩn
+lbl.title.add: Thêm mới
+lbl.login-forgot-password-descrition: Nhập vào email hoặc số điện thoại để lấy lại mật khẩu
+lbl.login-forgot-password-descrition-change: Nhập mật khẩu mới của bạn !
+grid.lock-ip-success: Khóa IP thành công
+grid.delete-success: Xóa  thông tin thành công
+grid.set-publish-success: Thay đổi trạng thái thành công.
+err.login-failed: Mật khẩu hoặc Email đăng nhập chưa chính xác.
+phd.filter.keyword: Tìm kiếm
+phd.filter.user-role: --Quyền hạn--
+phd.filter.is-published: --Trạng thái--
+phd.filter.login-status: --Kết quả đăng nhập--
+phd.filter.login-status-1: Thành công
+phd.filter.login-status-0: Thất bại
+opt.is-published-1: có hiệu lực
+opt.is-published-0: không hiệu lực
+media-file.keyword: Từ khóa
+media-file.file-not-select: Chưa chọn tập tin
+media-file.folder-not-select: Chưa chọn thư mục
+media-file.refresh: Tải lại
+media-file.add-folder: Thêm thư mục
+media-file.folder-delete: Xóa thư mục
+media-file.file-delete: Xóa tập tin
+media-file.delete-confirm: Xóa tập tin/thư mục được chọn ?
+media-file.folder-not-input: Chưa nhập tên thư mục
+media-file.file-existing: Tập tin đã có
+media-file.file-upload-success: Hoàn thành
+media-file.file-upload-failed: Upload tập tin bị lỗi
+media-file.file-not-found: Không tìm thấy tập tin
+media-file.file-delete-success: Xóa tập tin thành công
+media-file.path-not-found: Không tìm thấy thư mục
+media-file.path-not-empty: Không thể xóa thư mục có chứa tập tin
+media-file.folder-delete-success: Xóa thư mục thành công
+media-file.path-name-existing: Thư mục đã tồn tại
+media-file.directory-create-success: Tạo thư mục thành công
+information: Thông tin liên hệ
+administrator-setting: Phần quản trị
+admin-user: Thành viên quản trị
+adminuser: Thành viên
+adminrole: Phân quyền
+adminloginlog: Lịch sử đăng nhập
+adminiplock: Khóa đăng nhập
+website-setting: Cấu hình website
+media-management: Quản lý tập tin
+mediafile: Danh sách tập tin
+websetemail: Email
+websetgeneral: Cấu hình chung
+websettranslator: Ngôn ngữ
+accessibility: Accessibility
+#ONLY CHANGE AFTER  THIS COMMENT
+
+setting-mail-template.subject: Tiêu đề Email
+setting-mail-template.subject-required: Vui lòng nhập tiêu đề !
+setting-mail-template.content: Nội dung html {{email}}, {{link}} sẽ được thay thế
+setting-mail-template.content-text: Nội dung văn bản {{email}}, {{link}} sẽ được thay thế
+setting-mail-template.title: Mẫu
+settingwebsite: Cài đặt
+setting-email: Cài đặt Email
+setting-page: Website
+setting-website.page-meta: Thẻ
+setting-website.page-meta-noted: ""
+setting-website.page-script-top: Đầu trang
+setting-website.page-script-top-noted: ""
+setting-website.page-script-bottom: Giữa trang
+setting-website.page-script-bottom-noted: ""
+setting-website.smtp-user: Email đăng nhập
+setting-website.smtp-user-noted: ""
+setting-website.smtp-password: Mật khẩu
+setting-website.smtp-password-noted: ""
+setting-website.smtp-host: Host
+setting-website.smtp-host-noted: "exp: smtp.gmail.com"
+setting-website.smtp-port: Port
+setting-website.smtp-port-noted: "exp: 465"
+setting-website.smtp-type: Loại mã hóa
+setting-website.smtp-type-noted: ""
+setting-website.global-email-signature: Global Email Signature
+setting-website.global-email-signature-noted: ""
+setting-website.global-email-css: Global Email Css
+setting-website.global-email-css-noted: ""
+setting-website.client-email-header: Client Email Header
+setting-website.client-email-header-noted: ""
+setting-website.client-email-footer: Client Email Footer
+setting-website.client-email-footer-noted: ""
+setting-website.system-email-from-name: System From Name
+setting-website.system-email-from-name-noted: ""
+setting-website.system-email-from-email: System From Email
+setting-website.system-email-from-email-noted: ""
+setting-website.system-email-bcc: Hệ thống Email Bcc
+setting-website.system-email-bcc-noted: Xác định tất cả các email sẽ được thêm vào bcc
+setting-website.smtp-type-ssl: SSL
+setting-website.smtp-type-tls: TLS
+setting-website.smtp-type-none: None
+setting-website.save-success: Lưu thiết lập thành công!
+setting-website.seo-meta-title: "Tiêu đề"
+setting-website.seo-meta-title-noted: ""
+setting-website.seo-meta-keyword: "Mật khẩu"
+setting-website.seo-meta-keyword-noted: ""
+setting-website.seo-meta-description: "Mô tả"
+setting-website.seo-meta-description-noted: ""
+setting-website.seo-social-facebook-url: Facebook Url
+setting-website.seo-social-facebook-url-noted: ""
+setting-website.seo-social-twitter-url: Twitter Url
+setting-website.seo-social-twitter-url-noted: ""
+setting-website.seo-social-linkedin-url: Linkedin Url
+setting-website.seo-social-linkedin-url-noted: ""
+setting-website.seo-social-instagram-url: Instagram Url
+setting-website.seo-social-instagram-url-noted: ""
+setting-seo: SEO Option
+setting-general: General
+setting-general.img-prefix: Image prefix
+setting-general.img-prefix-noted: ""
+setting-general.img-min-width: Image thumb width
+setting-general.img-min-width-noted: ""
+setting-general.img-max-width: Image max width
+setting-general.img-max-width-noted: ""
+setting-general.img-watermark: Image watermark url
+setting-general.img-watermark-noted: ""
+setting-general.favicon: Favicon url
+setting-general.favicon-noted: ""
+setting-general.logo: Logo url
+setting-general.logo-noted: ""
+setting-general.main-email: Email liên hệ
+setting-general.main-email-noted: ""
+setting-general.main-domain: Domain
+setting-general.main-domain-noted: ""
+setting-general.company-hotline: Số điện thoại công ty
+setting-general.company-hotline-noted: ""
+setting-general.company-address: Địa chỉ công ty
+setting-general.company-address-noted: ""
+setting-general.company-name: Tên công ty
+setting-general.company-name-noted: ""
+setting-location: Location
+setting-location.time-format: Time format
+setting-location.time-format-noted: ""
+setting-location.date-format: Date format
+setting-location.date-format-noted: ""
+setting-location.default-language: Default language
+setting-location.default-language-noted: ""
+setting-location.default-time-zone: Default time-zone
+setting-location.default-time-zone-noted: ""
+setting-seo.social-twitter: Twitter url
+setting-seo.social-twitter-noted: ""
+setting-seo.social-linkedin: Linkedin Url
+setting-seo.social-linkedin-noted: ""
+setting-seo.social-instagram: Instagram url
+setting-seo.social-instagram-noted: ""
+setting-seo.social-facebook: Facebook url
+setting-seo.social-facebook-noted: ""
+setting-seo.custom-footer: Cuối trang
+setting-seo.custom-footer-noted: ""
+setting-seo.custom-header: Đầu trang
+setting-seo.custom-header-noted: ""
+setting-seo.default-keyword: Từ khóa mặc định
+setting-seo.default-keyword-noted: ""
+setting-seo.default-description: Mô tả
+setting-seo.default-description-noted: ""
+setting-seo.default-title: Tiêu đề
+setting-seo.default-title-noted: ""
+setting-seo.default-site-name: Tên công ty
+setting-seo.default-site-name-noted: ""
+setting-general.company-description: Ghi chú công ty
+setting-general.company-description-noted: ""
+
+setting-mail-template.name: Tên
+setting-mail-template.email: Email
+setting-mail-template.copy-to: Copy-to
+setting-mail-template.explained-note: ""
+setting-mail-template.explained-email: ""
+setting-mail-template.explained-link: ""
+setting-mail-template.explained-domain: ""
+
+news-info: Tin tức
+news: Danh sách
+news.title: Tiêu đề tin
+news.title-required: Nhập vào tiêu đề
+news.photo: Hình ảnh
+news.photo-required: Chọn hình ảnh
+news.description: Mô tả
+news.content: Nội dung
+news.cate: Danh mục
+phd.filter.show-on: --Xem trên--
+phd.filter.view-more: --View More Url--
+opt.view-more-0: Tin không có view more
+opt.view-more-1: Tin có view more
+opt.show-on-all: Xem trên cả 2
+opt.show-on-app: Xem trên app
+opt.show-on-web: Xem trên web
+news.show-on: Xem trên
+news.show-on-all: Xem trên cả 2
+news.show-on-app: Xem trên app
+news.show-on-web: Xem trên web
+news.photo-thumb: Thumbnail
+news.photo-thumb-required: Cần chọn hình thumbnail
+news.view-more: View more url (để trống khi tin tức không phải view more)
+
+newscategory: Danh mục
+news-category.title: Tên danh mục
+news-category.title-required: Nhập vào tên danh mục
+
+homepage: Home
+homeslider: Slide home
+home-slider.title: Mô tả ảnh
+home-slider.photo: Hình ảnh
+home-slider.photo-required: Chưa chọn hình ảnh
+home-slider.reference-url: Link liên kết
+
+trackinginfo: Thông tin thu thập
+tracking-info.gender: Giới tính
+tracking-info.gender-male: Nam
+tracking-info.gender-female: Nữ
+tracking-info.device-id: Device Id
+tracking-info.platform: Platform
+tracking-info.gender-required: Nhập giới tính
+tracking-info.device-id-required: Nhập device Id
+tracking-info.platform-required: Nhập platform
+phd.gender: --Giới tính--
+opt.gender-male: Nam
+opt.gender-female: Nữ
+
+customer: Khách hàng
+customer.product-model: Sản phẩm
+customer.full-name: Họ tên
+customer.phone-number: Số ĐT
+customer.address: Địa chỉ
+customer.birthday: Ngày sinh nhật
+customer.order-date: Ngày mua hàng
+
+

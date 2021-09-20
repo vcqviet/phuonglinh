@@ -1,0 +1,37 @@
+hk_admin.adminiplock:
+    path: /admin-ip-lock/{page}/{limit}
+    controller: HK\AdminBundle\Controller\AdminIpLockController::index
+    defaults:
+        page: 1
+        limit: 20
+    requirements:
+        page: \d+
+        limit: \d+
+hk_admin.adminiplock.filter:
+    path: /admin-ip-lock/filter/{page}/{limit}
+    controller: HK\AdminBundle\Controller\AdminIpLockController::filter
+    defaults:
+        page: 1
+        limit: 20
+    requirements:
+        page: \d+
+        limit: \d+
+hk_admin.adminiplock.filter_form:
+    path: /admin-ip-lock/filter-form
+    controller: HK\AdminBundle\Controller\AdminIpLockController::filterForm
+hk_admin.adminiplock.menu_control:
+    path: /admin-ip-lock/menu-control
+    controller: HK\AdminBundle\Controller\AdminIpLockController::menuControl
+hk_admin.adminiplock.delete:
+    path: /admin-ip-lock/delete
+    controller: HK\AdminBundle\Controller\AdminIpLockController::delete
+    methods:
+        - POST
+hk_admin.adminiplock.lock_ip:
+    path: /admin-ip-lock/lock-ip
+    controller: HK\AdminBundle\Controller\AdminIpLockController::lockIp
+    methods:
+        - POST
+hk_admin.adminiplock.add:
+    path: /admin-ip-lock/add
+    controller: HK\AdminBundle\Controller\AdminIpLockController::addEdit

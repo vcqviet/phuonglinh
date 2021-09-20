@@ -1,0 +1,13 @@
+framework:
+    default_locale: '%env(LOCALE)%'
+    translator:
+        paths: 
+            - '%kernel.project_dir%/../httpdocs/translations'
+            - '%kernel.project_dir%/src/HK/AdminBundle/translations'
+        fallbacks: 
+            - 'vi'
+            - 'en'
+            - 'ch'
+            - 'ja'
+            - 'fr'
+            - 'ko'

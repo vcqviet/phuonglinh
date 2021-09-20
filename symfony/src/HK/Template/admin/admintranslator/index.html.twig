@@ -1,0 +1,45 @@
+{% extends 'admin/master/admin.html.twig' %}
+{% block css %}{% endblock %}
+{% block body_content %}
+    <section class="hk-sec-wrapper">
+        <div class="card-header p-0">
+            <ul class="nav nav-tabs active-thik nav-primary border-0" id="myTab" role="tablist">
+                {% for it in data.langs %}
+                    {% set show = '' %}
+                    {% set is_current = 'false' %}
+                    {% if(it.lang == data.current) %}
+                        {% set show = 'active' %}
+                        {% set is_current = 'true' %}
+                    {% endif %}
+                <li class="nav-item">
+                  <a class="nav-link px-4 py-3 rounded-0 {{show}}" id="aria-tab-{{it.lang}}" data-toggle="tab" href="#trans-tab-{{it.lang}}" role="tab" aria-controls="aria-tab-{{it.lang}}" aria-selected="{{is_current}}">{{it.language}}</a>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+        <form id="rb-form-translator">
+            <div class="card-body">
+                <div class="tab-content" id="trans-tab-content">
+                    {% for it in data.langs %}
+                        {% set show = '' %}
+                        {% if(it.lang == data.current) %}
+                            {% set show = 'show active' %}
+                        {% endif %}
+                        <div class="tab-pane fade {{show}}" id="trans-tab-{{it.lang}}" role="tabpanel" aria-labelledby="aria-tab-{{it.lang}}">
+                        {% for k, l in data.translates[it.lang] %}
+                            <div class="form-group row">
+                                <label for="trans{{k}}" class="col-sm-3 col-form-label">{{data.trans[k]}}</label>
+                                <div class="col-sm-9">
+                                  <input class="form-control rb-check" id="{{it.lang}}_{{k}}" name="{{it.lang}}[{{k}}]" rb-validate-required="0" rb-validate-required-error="{{'lbl.translator-required'|trans}}" value="{{l}}"/>
+                                </div>
+                            </div>
+                        {% endfor %}
+                        </div>
+                    {% endfor %}
+                </div>
+                <div class="form-group"><button type="button" id="translator_save" name="translator_save" class="btn-primary float-right rb-form btn" rb-ref-id="rb-form-translator" rb-data-url="?" rb-form-is-multipart="0" rb-callback-after="badmin_formAfter">{{'lbl.form.button-save'|trans}}</button></div>
+                <div style="clear:both"></div>
+            </div>
+        </form>
+    </section>
+{% endblock %}

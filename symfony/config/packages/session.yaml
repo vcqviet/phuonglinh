@@ -1,0 +1,5 @@
+services:
+    Symfony\Component\HttpFoundation\Session\Storage\Handler\PdoSessionHandler:
+        arguments:
+            - 'mysql:dbname=%env(resolve:DB_NAME)%; host=%env(resolve:DB_HOST)%; port=%env(resolve:DB_PORT)%'
+            - {db_username: '%env(resolve:DB_USER)%', db_password: '%env(resolve:DB_USER_PASSWORD)%' }

@@ -1,0 +1,279 @@
+lbl.language.en: English
+lbl.language.vi: Tiếng Việt
+lbl.language.ja: 日本人
+lbl.language.ch: 中文
+dashboard: Dash board
+err.login-failed: Password or Email invalid !
+lbl.admin-title: HK CMS - Version 1.0.0
+lbl.login-form-left-title: Administrator System
+lbl.login-form-left-description: Input email or telephone and password to login
+lbl.login-title: Administrator System
+lbl.login-form-email: Email/Telephone
+lbl.login-recover: Send
+lbl.login: Login
+lbl.login-form-password: Password
+lbl.login-remember-me: Remember me
+lbl.login-forgot-password: Forgot password
+lbl.login-recover-success: Request successful ! Please check your email !
+lbl.login-form-password-confirm: Confirm password
+lbl.login-reset: Change password
+lbl.login-reset-success: Password changed !
+lbl.login-recover-subject: Request to change password from %domain%
+lbl.login-reset-subject: Your password was changed from %domain%
+lbl.login-reset-invalid-password: Invalid password !
+lbl.login-forgot-not-found: Invalid information !
+lbl.cms-system: CMS
+lbl.action-publish: Change publish
+lbl.about-page.title: Title
+lbl.action: Action
+lbl.action-edit: Edit/Update
+lbl.limit-item: Show
+lbl.about-page.content: Content
+lbl.form.button-save: Save
+lbl.title.edit: Edit/Update
+lbl.form.edit-success: Update successful !
+lbl.action-add: Add new
+lbl.user.email-address: Email
+lbl.user.phone-number: Phone number
+lbl.user.role-name: Role/Group
+lbl.is-published: Dislay Status
+lbl.user.email-login: Email
+lbl.user.role: Role/Group
+lbl.user.password-login: Password
+lbl.user.password-confirm: Confirm password
+lbl.user.change-password: Change password
+lbl.user.logout: Logout
+lbl.role.role-name: Role/Group
+lbl.user-login-log.time: Time
+lbl.user-login-log.status: Login status
+lbl.user-login-log.ip: IP login
+lbl.user-login-log.email: User name
+lbl.action-lock-ip: Lock Ip
+lbl.action-confirm-lock-ip: Lock this Ip to login system ?
+lbl.user.ip-lock: Lock IP
+lbl.iplock.ip-locked-required: Input IP to lock !
+lbl.iplock.ip-locked: IP cần khóa
+lbl.menu.add-new: Add new
+lbl.menu.delete: Delete
+lbl.menu.publish: Show
+lbl.menu.un-published: Hide
+lbl.form.save-success: Save successful !
+lbl.role.permission-update-success: Change permission successful !
+lbl.about-page.title-required: Input title !
+lbl.menu.checked-require: Please check the data that you want to update !
+lbl.user.email-login-required: Input email !
+lbl.user.phone-number-required: Input phone number !
+lbl.user.password-login-min-error: Password was shortly !
+lbl.user.password-confirm-error: Confirm password invalid !
+lbl.user.password-login-max-error: Password over maximum charater !
+lbl.form.save-edit-error: Connection was error, please try again !
+lbl.role.role-name-required: Input role/group name !
+lbl.user.password-login-required: Input your password !
+lbl.user.phone-number-existing: Can not use this phone number !
+lbl.user.email-existing: Email existing !
+lbl.role.access-view: Only view/follow
+lbl.role.access-edit: Can edit/update
+lbl.role.access-delete: Full control
+lbl.action-confirm-delete: Do you want to delete ?
+lbl.action-delete: Delete
+lbl.modal.header-confirm: Confirmation
+lbl.modal.cancel: Cancel
+lbl.modal.confirm: Ok
+lbl.menu.confirm-delete: Delete all selecte data ?
+lbl.action-display-order-up: Order - up
+lbl.action-display-order-down: Order - down
+lbl.action-permission: Set permission
+lbl.title.add: Add new
+lbl.login-forgot-password-descrition: Input your email or telephone to recover password
+lbl.login-forgot-password-descrition-change: Input your password and keep it !
+grid.lock-ip-success: Lock Ip successful !
+grid.delete-success: Deleted !
+grid.set-publish-success: Change status successful !
+phd.filter.keyword: Search
+phd.filter.user-role: --Role/Group--
+phd.filter.is-published: --Display Status--
+phd.filter.login-status: --Login status--
+phd.filter.login-status-1: Success
+phd.filter.login-status-0: Failed
+opt.is-published-1: show
+opt.is-published-0: hide
+media-file.keyword: Keyword
+media-file.file-not-select: Select your file !
+media-file.folder-not-select: Select your folder !
+media-file.refresh: Refresh
+media-file.add-folder: Add folder
+media-file.folder-delete: Delete folder
+media-file.file-delete: Delete file
+media-file.delete-confirm: Delete folder/file ?
+media-file.folder-not-input: Input folder name
+media-file.file-existing: File existing
+media-file.file-upload-success: Upload successful !
+media-file.file-upload-failed: Upload failed !
+media-file.file-not-found: File not found !
+media-file.file-delete-success: Delete successful !
+media-file.path-not-found: Folder not found !
+media-file.path-not-empty: Can not delelet not emty folder !
+media-file.folder-delete-success: Delete folder success !
+media-file.path-name-existing: Folder existing !
+media-file.directory-create-success: Add folder success !
+information: Information
+administrator-setting: Admin Setting
+admin-user: Admin user
+adminuser: User
+adminrole: Role/Group
+adminloginlog: Login history
+adminiplock: Lock Ip
+website-setting: Website setting
+media-management: File management
+mediafile: File management
+websetemail: Email
+websetgeneral: General setting
+websettranslator: Language setting
+accessibility: Accessibility
+
+#ONLY CHANGE AFTER  THIS COMMENT
+#information
+
+settingmailtemplate: Email template
+settingmailtemplate._USER_REFER_THANK_YOU: User Refer Thank you
+settingmailtemplate._USER_CHANGE_PASSWORD_ALERT: User Change Password Alert
+settingmailtemplate._USER_RECOVER: User Forgot Password
+settingmailtemplate._USER_REGISTER: User Register Thank you
+setting-mail-template.subject: Email Subject 
+setting-mail-template.subject-required: Input email subject
+setting-mail-template.content: Content html {{email}}, {{link}} will be replace
+setting-mail-template.content-text: Content text {{email}}, {{link}} will be replace
+setting-mail-template.title: Template for
+
+settingwebsite: Setting
+setting-email: Email setting
+setting-page: Website
+setting-website.page-meta: Meta Tag
+setting-website.page-meta-noted: ''
+setting-website.page-script-top: Script Header
+setting-website.page-script-top-noted: ''
+setting-website.page-script-bottom: Script Body
+setting-website.page-script-bottom-noted: ''
+setting-website.smtp-user: SMTP User
+setting-website.smtp-user-noted: ''
+setting-website.smtp-password: SMTP Password
+setting-website.smtp-password-noted: ''
+setting-website.smtp-host: SMTP Host
+setting-website.smtp-host-noted: 'exp: smtp.gmail.com'
+setting-website.smtp-port: SMTP Port
+setting-website.smtp-port-noted: 'exp: 465'
+setting-website.smtp-type: SMTP Encryption
+setting-website.smtp-type-noted: ''
+setting-website.global-email-signature: Global Email Signature
+setting-website.global-email-signature-noted: ''
+setting-website.global-email-css: Global Email Css
+setting-website.global-email-css-noted: ''
+setting-website.client-email-header: Client Email Header
+setting-website.client-email-header-noted: ''
+setting-website.client-email-footer: Client Email Footer
+setting-website.client-email-footer-noted: ''
+setting-website.system-email-from-name: System From Name
+setting-website.system-email-from-name-noted: ''
+setting-website.system-email-from-email: System From Email
+setting-website.system-email-from-email-noted: ''
+setting-website.system-email-bcc: System Email Bcc
+setting-website.system-email-bcc-noted: define all email that will be add to bcc
+setting-website.smtp-type-ssl: SSL
+setting-website.smtp-type-tls: TLS
+setting-website.smtp-type-none: None
+setting-website.save-success: Save setting successful !
+setting-website.seo-meta-title: 'Meta: Title'
+setting-website.seo-meta-title-noted: ''
+setting-website.seo-meta-keyword: 'Meta: Keyword'
+setting-website.seo-meta-keyword-noted: ''
+setting-website.seo-meta-description: 'Meta: Description'
+setting-website.seo-meta-description-noted: ''
+setting-website.seo-social-facebook-url: Facebook Url
+setting-website.seo-social-facebook-url-noted: ''
+setting-website.seo-social-twitter-url: Twitter Url
+setting-website.seo-social-twitter-url-noted: ''
+setting-website.seo-social-linkedin-url: Linkedin Url
+setting-website.seo-social-linkedin-url-noted: ''
+setting-website.seo-social-instagram-url: Instagram Url
+setting-website.seo-social-instagram-url-noted: ''
+setting-seo: SEO Option
+setting-general: General
+setting-general.img-prefix: Image prefix
+setting-general.img-prefix-noted: ''
+setting-general.img-min-width: Image thumb width
+setting-general.img-min-width-noted: ''
+setting-general.img-max-width: Image max width
+setting-general.img-max-width-noted: ''
+setting-general.img-watermark: Image watermark url
+setting-general.img-watermark-noted: ''
+setting-general.favicon: Favicon url
+setting-general.favicon-noted: ''
+setting-general.logo: Logo url
+setting-general.logo-noted: ''
+setting-general.main-email: Main email contact
+setting-general.main-email-noted: ''
+setting-general.main-domain: Domain
+setting-general.main-domain-noted: ''
+setting-general.company-hotline: Company hot-line
+setting-general.company-hotline-noted: ''
+setting-general.company-address: Company address
+setting-general.company-address-noted: ''
+setting-general.company-name: Company name
+setting-general.company-name-noted: ''
+setting-location: Location
+setting-location.time-format: Time format
+setting-location.time-format-noted: ''
+setting-location.date-format: Date format
+setting-location.date-format-noted: ''
+setting-location.default-language: Default language
+setting-location.default-language-noted: ''
+setting-location.default-time-zone: Default time-zone
+setting-location.default-time-zone-noted: ''
+setting-seo.social-twitter: Twitter url
+setting-seo.social-twitter-noted: ''
+setting-seo.social-linkedin: Linkedin Url
+setting-seo.social-linkedin-noted: ''
+setting-seo.social-instagram: Instagram url
+setting-seo.social-instagram-noted: ''
+setting-seo.social-facebook: Facebook url
+setting-seo.social-facebook-noted: ''
+setting-seo.custom-footer: Custom footer
+setting-seo.custom-footer-noted: ''
+setting-seo.custom-header: Custom header
+setting-seo.custom-header-noted: ''
+setting-seo.default-keyword: Default keyword
+setting-seo.default-keyword-noted: ''
+setting-seo.default-description: Default description
+setting-seo.default-description-noted: ''
+setting-seo.default-title: Default title
+setting-seo.default-title-noted: ''
+setting-seo.default-site-name: Default site name
+setting-seo.default-site-name-noted: ''
+setting.save-confirm: Please confirm if you want to save all change of settings ?
+setting.confirmation: Save settings confirmation
+setting-general.company-description: Company description
+setting-general.company-description-noted: ''
+setting-mail-template.name: Name
+setting-mail-template.email: Email
+setting-mail-template.copy-to: Copy-to
+setting-mail-template.explained-note: ''
+setting-mail-template.explained-email: ''
+setting-mail-template.explained-link: ''
+setting-mail-template.explained-domain: ''
+
+adsmanagementhour: Thống kê Ads
+lbl.created-at: Created at
+lbl.updated-at: Updated at
+lbl.updated-by: Updated by
+kpilocation: KPI-Vị trí
+kpiperson: KPI-Tele giao đơn
+kpirating: KPI-Tele gọi
+
+
+customer: Khách hàng
+customer.product-model: Sản phẩm
+customer.full-name: Họ tên
+customer.phone-number: Số ĐT
+customer.address: Địa chỉ
+customer.birthday: Ngày sinh nhật
+customer.order-date: Ngày mua hàng

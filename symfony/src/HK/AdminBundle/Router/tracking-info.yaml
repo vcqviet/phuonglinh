@@ -1,0 +1,53 @@
+hk_admin.trackinginfo:
+    path: tracking-info{page}/{limit}
+    controller: HK\AdminBundle\Controller\TrackingInfoController::index
+    defaults:
+        page: 1
+        limit: 20
+    requirements:
+        page: \d+
+        limit: \d+
+hk_admin.trackinginfo.filter:
+    path: tracking-infofilter/{page}/{limit}
+    controller: HK\AdminBundle\Controller\TrackingInfoController::filter
+    defaults:
+        page: 1
+        limit: 20
+    requirements:
+        page: \d+
+        limit: \d+
+hk_admin.trackinginfo.lang_item:
+    path: tracking-infoitem-lang
+    controller: HK\AdminBundle\Controller\TrackingInfoController::itemLang
+hk_admin.trackinginfo.filter_form:
+    path: tracking-infofilter-form
+    controller: HK\AdminBundle\Controller\TrackingInfoController::filterForm
+hk_admin.trackinginfo.menu_control:
+    path: tracking-infomenu-control
+    controller: HK\AdminBundle\Controller\TrackingInfoController::menuControl
+hk_admin.trackinginfo.add:
+    path: tracking-infoadd
+    controller: HK\AdminBundle\Controller\TrackingInfoController::addEdit
+hk_admin.trackinginfo.order:
+    path: tracking-infoset-order
+    controller: HK\AdminBundle\Controller\TrackingInfoController::order
+    methods:
+    - POST
+hk_admin.trackinginfo.edit:
+    path: tracking-infoedit/{id}
+    controller: HK\AdminBundle\Controller\TrackingInfoController::addEdit
+    defaults:
+        id: -1
+hk_admin.trackinginfo.publish:
+    path: tracking-infopublish
+    controller: HK\AdminBundle\Controller\TrackingInfoController::publish
+    methods:
+    - POST
+hk_admin.trackinginfo.delete:
+    path: tracking-infodelete
+    controller: HK\AdminBundle\Controller\TrackingInfoController::delete
+    methods:
+    - POST
+hk_admin.trackinginfo.title-existing:
+    path: tracking-infotitle-existing
+    controller: HK\AdminBundle\Controller\TrackingInfoController::titleLangExisting

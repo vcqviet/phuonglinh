@@ -1,0 +1,34 @@
+hk_admin.adminloginlog:
+    path: /admin-login-log/{page}/{limit}
+    controller: HK\AdminBundle\Controller\AdminLoginLogController::index
+    defaults:
+        page: 1
+        limit: 20
+    requirements:
+        page: \d+
+        limit: \d+
+hk_admin.adminloginlog.filter:
+    path: /admin-login-log/filter/{page}/{limit}
+    controller: HK\AdminBundle\Controller\AdminLoginLogController::filter
+    defaults:
+        page: 1
+        limit: 20
+    requirements:
+        page: \d+
+        limit: \d+
+hk_admin.adminloginlog.filter_form:
+    path: /admin-login-log/filter-form
+    controller: HK\AdminBundle\Controller\AdminLoginLogController::filterForm
+hk_admin.adminloginlog.menu_control:
+    path: /admin-login-log/menu-control
+    controller: HK\AdminBundle\Controller\AdminLoginLogController::menuControl
+hk_admin.adminloginlog.delete:
+    path: /admin-login-log/delete
+    controller: HK\AdminBundle\Controller\AdminLoginLogController::delete
+    methods:
+        - POST
+hk_admin.adminloginlog.lock_ip:
+    path: /admin-login-log/lock-ip
+    controller: HK\AdminBundle\Controller\AdminLoginLogController::lockIp
+    methods:
+        - POST

@@ -1,0 +1,61 @@
+website:
+  type: session
+  menu:
+    news-info:
+      type: group
+      icon: grid
+      menu:
+        newscategory:
+          url: /news-category
+          icon: home
+        news:
+          url: /news
+          icon: home
+    homepage:
+          type: group
+          icon: home
+          menu:
+            homeslider:
+              url: /home-slider
+              icon: home
+            trackinginfo:
+              url: /tracking-info
+              icon: home
+    customer:
+      url: /customer
+      icon: home
+administrator-setting:
+  type: session
+  menu:
+    admin-user:
+      type: group
+      icon: users
+      menu:
+        adminuser:
+          url: /admin-user
+          icon: activity
+        adminrole:
+          url: /admin-role
+          icon: activity
+        adminloginlog:
+          url: /admin-login-log
+          icon: activity
+        adminiplock:
+          url: /admin-ip-lock
+          icon: activity
+    website-setting:
+      type: group
+      icon: settings
+      menu:
+        #                admintranslator:
+        #                    url: /website-translator
+        #                    icon: activity
+        settingwebsite:
+          url: /setting-website
+          icon: activity
+        # settingmailtemplate:
+        #     url: /setting-mail-template
+        #     icon: activity
+        mediafile:
+          url: /media-file
+          icon: activity

@@ -1,0 +1,33 @@
+security:
+    encoders:
+        HK\CoreBundle\Entity\CmsUser:
+            algorithm: bcrypt
+            cost: 11
+    providers:
+        our_db_provider:
+            entity:
+                class: HK\CoreBundle\Entity\CmsUser
+    firewalls:
+        dev:
+            pattern: ^/(_(profiler|wdt)|css|images|js)/
+            security: false
+        main:
+            anonymous: true
+            guard:
+                authenticators:
+                    - HK\AdminBundle\Security\LoginFormAuthenticator
+            remember_me:
+                secret:   '%kernel.secret%'
+                lifetime: 604800 # 1 week in seconds
+                path:     /admin
+            logout:
+                path:   /admin/logout
+                target: /admin/login
+
+    access_control:
+        - { path: ^/admin/login, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/admin/logout, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/admin/reset, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/admin/forgot, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/admin, roles: [ IS_AUTHENTICATED_FULLY, IS_AUTHENTICATED_REMEMBERED ] }
+        # - { path: ^/profile, roles: ROLE_USER }

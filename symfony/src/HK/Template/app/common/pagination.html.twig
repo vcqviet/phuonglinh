@@ -1,0 +1,30 @@
+<nav aria-label="pagination" id="rb-page-pagination">
+    <ul class="pagination justify-content-center">
+        {% if data.prev_page is defined and data.prev_page is not empty %}
+            <li rb-data-page="{{data.prev_page}}" class="page-item"><a class="page-link" href="{{data.url}}page={{data.prev_page}}"><i class="far fa-arrow-left"></i></a></li>
+        {% endif %}
+        {% if data.first_page is defined and data.first_page is not empty %}
+            <li rb-data-page="{{data.first_page}}" class="page-item"><a class="page-link" href="{{data.url}}page={{data.first_page}}">{{data.first_page}}</a></li>
+        {% endif %}
+        {% if data.left_page is defined and data.left_page is not empty %}
+            <li rb-data-page="{{data.left_page}}" class="page-item"><a class="page-link" href="{{data.url}}page={{data.left_page}}"><i class="fa fa-ellipsis-h"></i></a></li>
+        {% endif %}
+        {% for it in data.pages %}
+            <li rb-data-page="{{it.page}}" class="page-item"><a class="page-link" href="{{data.url}}page={{it.page}}">{{it.page}}</a></li>
+        {% endfor %}
+        {% if data.right_page is defined and data.right_page is not empty %}
+            <li rb-data-page="{{data.right_page}}" class="page-item"><a class="page-link" href="{{data.url}}page={{data.right_page}}"><i class="fa fa-ellipsis-h"></i></a></li>
+        {% endif %}
+        {% if data.last_page is defined and data.last_page is not empty %}
+            <li rb-data-page="{{data.last_page}}" class="page-item"><a class="page-link" href="{{data.url}}page={{data.last_page}}">{{data.last_page}}</a></li>
+        {% endif %}
+        {% if data.next_page is defined and data.next_page is not empty %}
+            <li rb-data-page="{{data.next_page}}" class="page-item"><a class="page-link" href="{{data.url}}page={{data.next_page}}"><i class="far fa-arrow-right"></i></a></li>
+        {% endif %}
+    </ul>
+</nav>
+<script type="text/javascript">
+$(function(){
+    $('nav#rb-page-pagination li[rb-data-page={{data.current_page}}]').addClass('active');
+});
+</script>

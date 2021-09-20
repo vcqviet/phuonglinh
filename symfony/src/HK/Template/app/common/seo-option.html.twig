@@ -1,0 +1,35 @@
+<title>{{data.page_title}}</title>
+<meta name="description" content="{{data.description}}"/>
+<meta name="keywords" content="{{data.keywords}}"/>
+
+<!--SEO powered by HK -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="{{data.page_title}}"/>
+<meta property="og:url" content="{{data.page_url}}">
+<meta property="og:image" content="{{data.image_url}}">
+<meta property="og:description" content="{{data.description}}">
+<meta property="og:site_name" content="{{data.site_title}}">
+<meta property="og:see_also" content="{{data.homepage_url}}">
+
+<meta property="og:locale" content="{{data.default_lang}}">
+{% if data.second_lang is defined %}
+<meta property="og:locale:alternate" content="{{data.second_lang}}" />
+{% endif %}
+<meta property="article:tag" content="{{data.keywords}}"/>
+<meta property='article:author' content='{{data.site_name}}' />
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:url" content="{{data.page_url}}">
+<meta name="twitter:title" content="{{data.page_title}}">
+<meta name="twitter:description" content="{{data.description}}">
+<meta name="twitter:image" content="{{data.image_url}}">
+
+<meta name="author" content="HK"/>
+<meta name="generator" content="HK.CMS (https://www.geekhubsolution.com)"/>
+<meta name="copyright" content="Raibow E-Commerce,ltd"/>
+
+<link rel="shortcut icon" href="{{data.favicon}}" />
+<meta charset="utf-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+{{data.custom_header|raw}}

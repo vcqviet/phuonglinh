@@ -1,0 +1,36 @@
+{% extends 'admin/master/admin.html.twig' %}
+{% block css %}{% endblock %}
+{% block body_content %}
+{% set url_lang_item = '' %}
+{% if data.url_lang_item is defined %}
+    {% set url_lang_item = data.url_lang_item %}
+{% endif%}
+<section class="hk-sec-wrapper" id="rb-section-form" rb-data-url="{{url_lang_item}}" rb-data-is-multi-languages="{{data.is_lang_content}}">
+    {{ form(form)}}
+</section>
+{% endblock %}
+{% block script %}
+<script type="text/javascript">
+var badmin_validateCustom = function ($ob) {
+    var $password = $('#cms_user_loginPassword').val();
+    if(parseInt($('input#cms_user_editId').val(), 10) > 0 && $password.length == 0){
+        return 0;
+    }
+    if($password.length == 0) {
+        return BOB.getValidateRequiredError($ob);
+    }
+    if($password.length < 6) {
+        return BOB.getValidateMinError($ob);
+    }
+    if($password.length > 20) {
+        return BOB.getValidateMaxError($ob);
+    }
+    return 0;
+}
+$(function(){
+    if(parseInt($('#cms_user_editId').val(), 10) == 0){
+        $('#cms_user_loginPassword, #cms_user_confirmPassword').parent().prev('label').append('<span class="badge badge-danger badge-indicator"></span>');
+    }
+});
+</script>
+{% endblock %}

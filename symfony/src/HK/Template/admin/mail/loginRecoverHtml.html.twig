@@ -1,0 +1,48 @@
+<html>
+    <head>
+        <link crossorigin="anonymous" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" rel="stylesheet">
+    </head>
+    <body>
+        <h3>Chào {{fullName}} !</h3>
+        <div>
+            Chúng tôi nhận được yêu cầu lấy lại mật khẩu từ tài khoản của bạn. Để tiếp tục, vui lòng click vào đường dẫn bên dưới.
+            <br/>
+            Yêu cầu này sẽ bị huỷ sau 24h.
+            <br/>
+            Nếu không phải bạn đã yêu cầu, vui lòng thông báo cho chúng tôi:
+            <span style="color:#F00">
+                {{domain}}</span>
+            <br/>
+            <br/>
+            <a class='btn btn-primary' href='{{link}}'>Lấy lại mật khẩu</a>
+            <br/>
+            <br/>
+        </div>
+        <br/>
+        Trân trọng !
+        <br/>
+        HK CMS V1.0.0
+        <hr/>
+
+        <h3>Dear {{fullName}} !</h3>
+        <div>
+            We got the request for reset password from your account. Please click on the link below for confirmation of this request. 
+                    It's available within 24 hours.
+            <br/>
+            Please contact us:
+            <span style="color:#F00">
+                {{domain}}
+            </span>
+            if you didn't send this request.
+            <br/>
+            <br/>
+            <a class='btn btn-primary' href='{{link}}'>Reset password</a>
+            <br/>
+            <br/>
+        </div>
+        <br/>
+        Best regards !
+        <br/>
+        HK CMS V1.0.0
+    </body>
+</html>

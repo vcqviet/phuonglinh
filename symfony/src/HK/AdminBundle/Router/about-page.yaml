@@ -1,0 +1,73 @@
+hk_admin.aboutpage.lang_item:
+    path: /about-page/item-lang
+    controller: HK\AdminBundle\Controller\AboutPageController::itemLang
+hk_admin.aboutpage.pdfataglance:
+    path: /about-page/pdf-at-a-glance
+    controller: HK\AdminBundle\Controller\AboutPageController::addEditPdf
+    defaults:
+        namekey: _PDF_AT_A_GLANCE
+hk_admin.aboutpage.accessibility:
+    path: /about-page/accessibility
+    controller: HK\AdminBundle\Controller\AboutPageController::addEdit
+    defaults:
+        namekey: _ACCESSIBILITY
+hk_admin.aboutpage.privacy:
+    path: /about-page/privacy
+    controller: HK\AdminBundle\Controller\AboutPageController::addEdit
+    defaults:
+        namekey: _PRIVACY
+hk_admin.aboutpage.legal:
+    path: /about-page/legal
+    controller: HK\AdminBundle\Controller\AboutPageController::addEdit
+    defaults:
+        namekey: _LEGAL
+hk_admin.aboutpage.about:
+    path: /about-page/about-us
+    controller: HK\AdminBundle\Controller\AboutPageController::addEdit
+    defaults:
+        namekey: _ABOUT
+hk_admin.aboutpage.mission:
+    path: /about-page/mission
+    controller: HK\AdminBundle\Controller\AboutPageController::addEdit
+    defaults:
+        namekey: _MISSION
+hk_admin.aboutpage.history:
+    path: /about-page/history
+    controller: HK\AdminBundle\Controller\AboutPageController::addEdit
+    defaults:
+        namekey: _HISTORY
+hk_admin.aboutpage.delivery:
+    path: /about-page/delivery
+    controller: HK\AdminBundle\Controller\AboutPageController::addEdit
+    defaults:
+        namekey: _DELIVERY
+hk_admin.aboutpage.payment:
+    path: /about-page/payment
+    controller: HK\AdminBundle\Controller\AboutPageController::addEdit
+    defaults:
+        namekey: _PAYMENT
+hk_admin.aboutpage.return:
+    path: /about-page/return
+    controller: HK\AdminBundle\Controller\AboutPageController::addEdit
+    defaults:
+        namekey: _RETURN
+hk_admin.aboutpage.sizeguide:
+    path: /about-page/size-guide
+    controller: HK\AdminBundle\Controller\AboutPageController::addEdit
+    defaults:
+        namekey: _SIZE_GUIDE
+hk_admin.aboutpage.home:
+    path: /about-page/home
+    controller: HK\AdminBundle\Controller\AboutPageController::addEdit
+    defaults:
+        namekey: _HOME
+hk_admin.aboutpage.information:
+    path: /about-page/information
+    controller: HK\AdminBundle\Controller\AboutPageController::addEdit
+    defaults:
+        namekey: _INFORMATION
+hk_admin.aboutpage.contactfooter:
+    path: /about-page/contact-footer
+    controller: HK\AdminBundle\Controller\AboutPageController::addEdit
+    defaults:
+        namekey: _CONTACT_FOOTER

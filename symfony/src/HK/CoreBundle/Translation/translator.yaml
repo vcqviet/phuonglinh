@@ -1,0 +1,153 @@
+app.customer: Customer
+app.news: News
+app.news-description: 'Don’t miss us & Let’s follow our latest news!'
+app.contact: Contact
+app.cart.info: Cart
+app.checkout: Checkout
+app.login: Login
+app.product: Products
+app.customer-feedback: Customer Feedback
+app.customer-feedback-description: 'Like our clothing? Then follow the feed @machnhaduong Tag us to be one of the #machnhaduong'
+app.load-more: Load more...
+app.quick-lick: Quick link
+app.follow-us: Follow us
+app.we-support: We Support
+app.accessibility: Accessibility
+app.delivery: 'Shipping & Delivery'
+app.payment: 'Order & Payment'
+app.return: Return
+app.size-guide: Size Guide
+app.we-support-description: 'Want all our latest styles, exclusive updates and a lovely discount straight to your inbox? Enter your email and you are in:'
+app.homepage: Home page
+app.sort-by: Sort by
+app.best-selling: Best selling
+app.name-AZ: Name A-Z
+app.name-ZA: Name Z-A
+app.price-up: Price low to high
+app.price-down: Price high to low
+app.date-old: Date old to new
+app.date-new: Date new to old
+app.product-category: Categories
+app.quantity: Quantity
+app.select-size: Select Size
+app.add-to-cart: Add to cart
+app.request-rock: Request Rock
+app.share: Share
+app.related-product: Related product
+app.news-related: Related News
+app.full-name: Full name
+app.email: Email address
+app.email-required: Please in put your email !
+app.email-invalid: Email address is invalid !
+app.order-number: Order Number
+app.mesage: Message
+app.send-contact: Contact
+app.signin: Sign In
+app.password: Password
+app.forgot-password: Forgtot password
+app.register: Register
+app.signin-social: Sign in with
+app.user: User
+app.register-description: 'Enter your email address and password to create your account.'
+app.email-existing: Email existing, please input your email !
+app.passwordconfirm: Confirm password
+app.password-required: Please input your password !
+app.passwordconfirm-invalid: Confirm password is invalid !
+app.return-to-product: Back to store
+app.register-success: Register account success !
+app.recover: Forgot password
+app.recover-description: Enter your email address to reset your password.
+app.recover-password: Send request
+app.your-email: Your email
+app.submit: Ok
+app.user-not-found: Email does not exist !
+app.information: Information
+app.order-history: History
+app.phone-number: Phone number
+app.address: Address
+app.current-password: Password
+app.edit: Update
+app.full-name-required: Please input your full name !
+app.phone-number-required: Please input your phone number !
+app.phone-number-invalid: Your phone number is invalid !
+app.current-password-required: Please input current password !
+app.my-profile: My profile
+app.logout: Logout
+app.update-info-success: Update succefully !
+app.current-password-invalid: Password invalid !
+app.login-failed: Invalid user or password !
+app.login-success: Login successful !
+app.add-to-cart-complete: Add product successful !
+app.add-to-cart-error: Please select size to add !
+app.like: Like
+tv-show.type: Type
+
+app.fashion-academy: VietNam Fashion Academy
+app.name-shop: VietNam Fashion Academy
+app.gallery:  Students is Products
+app.partner: Partner
+app.tv-show: VFA CHANEL
+app.event: Event
+app.about: About Us
+app.teacher: Lecturer
+app.course: Programs & Course
+app.comment: Receive Students
+app.registration-advice: Register Consulting
+app.send: Send ->
+
+app.home-page: Home
+app.about-page: About Us
+app.course-page: Course
+app.gallery-page: Gallery
+app.tvshow-page: VFA Chanel
+app.partner-page: Partner
+app.news-page: News
+app.contact-page: Contact 
+app.name-course: Vietnam Fashion Academy
+app.select: Select a category
+app.registration: Registration
+app.menu: MENU
+app.write-information: Please complete the form below to submit a contact request or to register for advice from VFA.
+app.program-course: Programs & Course
+app.registration-course: Registration course
+app.please: Please complete the form below to register for this course
+app.cost-course: đ/Course
+app.search: Advanced search
+app.album: View another Album
+app.course-detail: Courses
+app.detail: See details
+app.news-event: News & Event
+app.news-detail: Related news
+app.see-more: Load more...
+app.comment-fb: Comment
+
+app.you-advice: Do you need advice?
+app.register-now: Register Now
+app.address-shop: 184 - 17 Dien Bien Phu, Ward 17, District Binh Thanh, TP. HCM
+app.work-time: Working hours are from 9am to 9pm, from Monday to Sunday
+app.phone: 092 303 11 88
+app.email-shop: xinchao@vietnamfashionacademy.vn
+
+app.you-need-info: If you need more information, please contact
+app.another-course: Another course
+app.cost: Cost
+app.course-list: Course list
+app.keyword: Keyword
+app.search-key: Search
+app.content: Content
+app.galleries: Gallery
+dashboard.content: Comming soon
+app.send-success: Send success!
+app.validate-full-name: Input Name
+app.validate-phone-number: Input phone number
+app.validate-email-error: Input email
+app.validate-search: Input Keyword
+app.registration-success: Registration success
+app.search-all: Category
+app.search-cost: Select cost
+app.recaptcha-error: Please confirm you are not a robot !
+app.send-contact-failed: Can not send contact, please try again !
+app.contact-success: Thanks for your contact !
+app.phone-number-error: Phone number error !
+app.email-error: Email error !
+grid.set-order-success: Set order success ! 

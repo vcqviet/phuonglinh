@@ -1,0 +1,66 @@
+hk_admin.adminrole:
+    path: /admin-role/{page}/{limit}
+    controller: HK\AdminBundle\Controller\AdminRoleController::index
+    defaults:
+        page: 1
+        limit: 20
+    requirements:
+        page: \d+
+        limit: \d+
+hk_admin.adminrole.filter:
+    path: /admin-role/filter/{page}/{limit}
+    controller: HK\AdminBundle\Controller\AdminRoleController::filter
+    defaults:
+        page: 1
+        limit: 20
+    requirements:
+        page: \d+
+        limit: \d+
+hk_admin.adminrole.filter_form:
+    path: /admin-role/filter-form
+    controller: HK\AdminBundle\Controller\AdminRoleController::filterForm
+    
+hk_admin.adminrole.menu_control:
+    path: /admin-role/menu-control
+    controller: HK\AdminBundle\Controller\AdminRoleController::menuControl
+    
+hk_admin.adminrole.add:
+    path: /admin-role/add
+    controller: HK\AdminBundle\Controller\AdminRoleController::addEdit
+
+hk_admin.adminrole.order:
+    path: /admin-role/set-order
+    controller: HK\AdminBundle\Controller\AdminRoleController::order
+    methods:
+        - POST
+hk_admin.adminrole.edit:
+    path: /admin-role/edit/{id}
+    controller: HK\AdminBundle\Controller\AdminRoleController::addEdit
+    defaults:
+        id: -1
+hk_admin.adminrole.publish:
+    path: /admin-role/publish
+    controller: HK\AdminBundle\Controller\AdminRoleController::publish
+    methods:
+        - POST
+hk_admin.adminrole.delete:
+    path: /admin-role/delete
+    controller: HK\AdminBundle\Controller\AdminRoleController::delete
+    methods:
+        - POST
+hk_admin.adminrole.role_existing:
+    path: /admin-role/role-existing
+    controller: HK\AdminBundle\Controller\AdminRoleController::roleExisting
+    methods:
+        - POST
+hk_admin.adminrole.permission-access:
+    path: /admin-role/permission-access
+    controller: HK\AdminBundle\Controller\AdminRoleController::permissionAccess
+hk_admin.adminrole.permission-update:
+    path: /admin-role/permission-update
+    controller: HK\AdminBundle\Controller\AdminRoleController::permissionUpdate
+hk_admin.adminrole.permission:
+    path: /admin-role/permission/{id}
+    controller: HK\AdminBundle\Controller\AdminRoleController::permission
+    defaults:
+        id: -1

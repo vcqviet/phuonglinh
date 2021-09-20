@@ -1,0 +1,61 @@
+{% extends 'admin/master/login2.html.twig' %}
+
+{% block body %}
+<div class="hk-pg-wrapper hk-auth-wrapper">
+    <header class="d-flex align-items-center">
+        <a class="d-flex auth-brand ml-lg-auto mr-xl-60" href="//geekhubsolution.com" title="HK">
+             HK
+        </a>
+    </header>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-5 pa-0 d-none d-lg-block">
+                <div class="d-flex align-items-center justify-content-center w-100 h-100 bg-blue">
+                    <img class="w-100 w-md-70" src="/assets/admin/img/bg_cover.svg" alt="Cover">
+                </div>
+            </div>
+            <div class="col-lg-7 pa-0">
+                <div class="py-50 d-lg-none"></div>
+                <div class="auth-form-wrap py-50">
+                    <div class="auth-form w-xxl-40 w-sm-50 w-xs-100">
+                        <form  method="post" action="?" name="rb-form-login">
+                            <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}"/>
+                            <h1 class="display-5 font-weight-bold mb-10">{{'lbl.login-forgot-password'|trans}}</h1>
+                            <p class="mb-30">{{'lbl.login-forgot-password-descrition'|trans}}</p>
+                            <div class="form-group">
+                                <input class="form-control" type="password" name="password" placeholder="{{'lbl.login-form-password'|trans}}" required >
+                            </div>
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <input class="form-control" type="password" name="passwordConfirm" placeholder="{{'lbl.login-form-password-confirm'|trans}}" required>
+                                </div>
+                            </div>
+                            <button class="btn btn-primary px-4 mr-2" type="submit">{{'lbl.login-reset'|trans}}</button>
+                            <a href="{{path('hk_admin_login')}}">{{'lbl.login'|trans}}</a>
+                            <div class="row  rb-login-error">
+                                {% if error %}
+                                    <div class="alert alert-danger">{{error|trans}}</div>
+                                {% endif %}
+                            </div>
+                        </form>
+                        <div class="mt-50 font-13"><span>Powered by <a target="_blank" rel="noopener noreferrer" href="//geekhubsolution.com" title="HK">HK</a></span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- 
+<form method="post">
+    <input class="form-control" type="password" name="password" placeholder="{{'lbl.login-form-password'|trans}}" required />
+    <input class="form-control" type="password" name="passwordConfirm" placeholder="{{'lbl.login-form-password-confirm'|trans}}" required />
+    <div class="form-button">
+        <button id="submit" type="submit" class="ibtn">{{'lbl.login-reset'|trans}}</button> <a href="{{path('hk_admin_login')}}">{{'lbl.login'|trans}}</a>
+    </div>
+    
+    {% if error is defined and error != ''%}
+        <div class="alert alert-danger">{{ error|trans }}</div>
+    {% endif %}
+</form>
+-->
+{% endblock %}

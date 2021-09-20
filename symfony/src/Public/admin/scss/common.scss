@@ -1,0 +1,41 @@
+.form-holder {
+    .form-content {
+        padding-top: 0px;
+        margin-top: -100px;
+    }
+}
+div.logo {
+    margin-bottom: 60px;
+    > img {
+        width: 250px;
+    }
+}
+.rb{
+    &-login-error{
+        width: 100%;
+        margin: 0px;
+        margin-top: 10px;
+        display: block;
+        text-align: center;
+    }
+    &-clear {
+        clear: both;
+    }
+    &-float-right {
+        float: right;
+    }
+    &-float-left {
+        float: left;
+    }
+    &-editor{
+        min-height: 100px;
+    }
+    &-photo-list{
+        max-width: 300px;
+        max-height: 120px;
+    }
+    &-product-select:disabled{
+        color: #324148 !important;
+        border-color: #e0e3e4 !important;
+    }
+}

@@ -1,0 +1,5 @@
+/symfony/vendor/
+/symfony/symfony.lock
+/httpdocs/var
+/httpdocs/node_modules
+/symfony/.env

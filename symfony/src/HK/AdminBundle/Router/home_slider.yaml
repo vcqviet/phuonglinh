@@ -1,0 +1,50 @@
+hk_admin.homeslider:
+    path: /home-slider/{page}/{limit}
+    controller: HK\AdminBundle\Controller\HomeSliderController::index
+    defaults:
+        page: 1
+        limit: 20
+    requirements:
+        page: \d+
+        limit: \d+
+hk_admin.homeslider.filter:
+    path: /home-slider/filter/{page}/{limit}
+    controller: HK\AdminBundle\Controller\HomeSliderController::filter
+    defaults:
+        page: 1
+        limit: 20
+    requirements:
+        page: \d+
+        limit: \d+
+hk_admin.homeslider.lang_item:
+    path: /home-slider/item-lang
+    controller: HK\AdminBundle\Controller\HomeSliderController::itemLang
+hk_admin.homeslider.filter_form:
+    path: /home-slider/filter-form
+    controller: HK\AdminBundle\Controller\HomeSliderController::filterForm
+hk_admin.homeslider.menu_control:
+    path: /home-slider/menu-control
+    controller: HK\AdminBundle\Controller\HomeSliderController::menuControl
+hk_admin.homeslider.add:
+    path: /home-slider/add
+    controller: HK\AdminBundle\Controller\HomeSliderController::addEdit
+hk_admin.homeslider.order:
+    path: /home-slider/set-order
+    controller: HK\AdminBundle\Controller\HomeSliderController::order
+    methods:
+    - POST
+hk_admin.homeslider.edit:
+    path: /home-slider/edit/{id}
+    controller: HK\AdminBundle\Controller\HomeSliderController::addEdit
+    defaults:
+        id: -1
+hk_admin.homeslider.publish:
+    path: /home-slider/publish
+    controller: HK\AdminBundle\Controller\HomeSliderController::publish
+    methods:
+    - POST
+hk_admin.homeslider.delete:
+    path: /home-slider/delete
+    controller: HK\AdminBundle\Controller\HomeSliderController::delete
+    methods:
+    - POST

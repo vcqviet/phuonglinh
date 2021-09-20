@@ -1,0 +1,331 @@
+{% extends 'app/master/layout.html.twig' %}
+{% block body_content %}
+    <section class="mainer" style="width: 100%; padding: 0px; background:#CF4A03; position: fixed">
+        <header>
+            <div class="infor row" style="padding: 10px; font-size:18pt; color: #fff">
+                <div class="col-md-4">
+                    Nhân viên:
+                    <span id="infotelesale">{{data.telesale}} - {{data.telesale_phone_number}}</span>
+                </div>
+                <div class="col-md-8 float-right text-right">
+                    Tổng đơn:
+                    <span id="infototal">{{data.order_total}}</span>
+                    - Thành công:
+                    <span id="infook">0</span>
+                    - Thất bại:
+                    <span id="infocancel">0</span>
+                </div>
+            </div>
+        </header>
+    </section>
+    <section class="mainer" style="padding-top: 80px;">
+        <div class="tab-content" id="setting-tab-content" style="padding: 10px;">
+                <table class="table table-bordered table-hover table-striped mb-0" id="tbl-management" style="">
+                    <thead class="thead-active">
+                        <tr>
+                            <th scope="col" style="width:70px">STT</th>
+                            <th scope="col" style="width:150px">Mã SP
+                                <br/><select id="fproductcode" name="fproductcode"></select>
+                            </th>
+                            <th scope="col" style="width:150px">Ngày giao đơn
+                                <br/><input type="date" name="fimportat_from" id="fimportat_from"/>
+                                <br/><input type="date" name="fimportat_to" id="fimportat_to"/>
+                            </th>
+                            <th scope="col" style="width:220px">Tên KH</th>
+                            <th scope="col" style="width:150px">Số ĐT KH/Nhà mạng<br/><select id="fphoneprovider" name="fphoneprovider"></select></th>
+                            <th scope="col" style="width:220px">Địa chỉ</th>
+                            <th scope="col" style="width:150px">Tỉnh/Huyện/Xã</th>
+                            <th scope="col" style="width:220px">Trạng thái
+                                <br/><select id="fstatus" name="fstatus"></select>
+                            </th>
+                            <th scope="col">Ghi chú</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tbl-calling"></tbody>
+                </table>
+        </div>
+    </section>
+{% endblock %}
+{% block script %}
+    <script type="text/javascript">
+        var $status = BJSON.stringToJSON('{{data.order_statuses|raw}}');
+        var $phone_providers = BJSON.stringToJSON('{{data.phone_providers|raw}}');
+        var $product_codes = BJSON.stringToJSON('{{data.product_codes|raw}}');
+        var $cities = [];
+        $(function () {
+            $.getJSON("/assets/json/cities.json", function (json) {
+                $cities = json;
+                TELE.init();
+            });
+        });
+        var TELE = {
+            init: function () {
+                TELE.loadFilter();
+                var windowHeight = window.innerHeight;
+                var headerHight = $('section.mainer > header').height();
+                $('#setting-tab-content').css('max-height', (windowHeight - headerHight - 50) + 'px');
+            },
+            loadFilter: function () {
+                var $st = $('#fstatus');
+                $st.html('');
+                $st.append('<option value="-1" selected>--Tất cả--</option>');
+                for (var i = 0; i < $status.length; i++) {
+                    $st.append('<option value="' + $status[i].id + '">' + $status[i].name + '</option>');
+                }
+                $st.change(function () {
+                    TELE.reloadOrder();
+                });
+                var $st = $('#fphoneprovider');
+                $st.html('');
+                $st.append('<option value="-1" selected>--Tất cả--</option>');
+                for (var i = 0; i < $phone_providers.length; i++) {
+                    $st.append('<option value="' + $phone_providers[i].id + '">' + $phone_providers[i].name + '</option>');
+                }
+                $st.change(function () {
+                    TELE.reloadOrder();
+                });
+                var $st = $('#fproductcode');
+                $st.html('');
+                $st.append('<option value="-1" selected>--Tất cả--</option>');
+                for (var i = 0; i < $product_codes.length; i++) {
+                    $st.append('<option value="' + $product_codes[i].id + '">' + $product_codes[i].fullName + '</option>');
+                }
+                $st.change(function () {
+                    TELE.reloadOrder();
+                });
+
+                $('#fimportat_from, #fimportat_to').change(function(){
+                    TELE.reloadOrder();
+                });
+                TELE.reloadOrder();
+            },
+            reloadOrder: function () {
+                BAJAX.send('/order-calling', {
+                    product_code: $('#fproductcode').val(),
+                    phone_provider: $('#fphoneprovider').val(),
+                    status: $('#fstatus').val(),
+                    importat_from: $('#fimportat_from').val(),
+                    importat_to: $('#fimportat_to').val(),
+                }, function (data) {
+                    if (BCOMMON.isOk(data)) {
+                        TELE.renderCalling(data.data);
+                        return;
+                    }
+                    BALERT.showError(data)
+                });
+            },
+            reInit: function () {
+                $('select.city').each(function () {
+                    var $ob = $(this);
+                    TELE.renderCity($ob);
+                    $ob.unbind('change').change(function () {
+                        BAJAX.send($ob.attr('hk-data-url'), {
+                            'id': $ob.attr('hk-data-id'),
+                            'val': $ob.val()
+                        }, function (data) {
+                            if (BCOMMON.isOk(data)) {
+                                TELE.reloadDistrict($ob);
+                                return;
+                            }
+                            BALERT.showError(data);
+                        }, 'POST');
+                    });
+                });
+                $('select.order-status').unbind('change').change(function () {
+                    var $ob = $(this);
+                    BAJAX.send('/order/update-order-status', {
+                        'id': $ob.attr('hk-data-id'),
+                        'val': $ob.val()
+                    }, function (data) {
+                        if (BCOMMON.isOk(data)) {
+                            TELE.updateInfo();
+                            if($ob.val() == '_ORDER_STATUS_CANCEL') {
+                                $ob.parent().parent().attr('class','cancel');
+                                return;
+                            }
+                            if($ob.val() == '_ORDER_STATUS_OK') {
+                                $ob.parent().parent().attr('class','success');
+                                return;
+                            }
+                            $ob.parent().parent().attr('class','');
+                            return;
+                        }
+                        BALERT.showError(data);
+                    }, 'POST');
+                });
+                $('.infofullname').unbind('change').change(function () {
+                    var $ob = $(this);
+                    BAJAX.send('/order/update-fullname', {
+                        'id': $ob.attr('hk-data-id'),
+                        'val': $ob.val()
+                    }, function (data) {
+                        if (BCOMMON.isOk(data)) {
+                            return;
+                        }
+                        BALERT.showError(data);
+                    }, 'POST');
+                });
+                $('.infoaddress').unbind('change').change(function () {
+                    var $ob = $(this);
+                    BAJAX.send('/order/update-address', {
+                        'id': $ob.attr('hk-data-id'),
+                        'val': $ob.val()
+                    }, function (data) {
+                        if (BCOMMON.isOk(data)) {
+                            return;
+                        }
+                        BALERT.showError(data);
+                    }, 'POST');
+                });
+                $('.inforemark').unbind('change').change(function () {
+                    var $ob = $(this);
+                    BAJAX.send('/order/update-remark', {
+                        'id': $ob.attr('hk-data-id'),
+                        'val': $ob.val()
+                    }, function (data) {
+                        if (BCOMMON.isOk(data)) {
+                            return;
+                        }
+                        BALERT.showError(data);
+                    }, 'POST');
+                });
+            },
+            updateInfo: function () {
+                var $total = 0;
+                var $ok = 0;
+                var $cancel = 0;
+                $('select.order-status').each(function () {
+                    $total++;
+                    var $ob = $(this);
+                    if ($ob.val() === '_ORDER_STATUS_OK') {
+                        $ok++;
+                    }
+                    if ($ob.val() === '_ORDER_STATUS_CANCEL') {
+                        $cancel++;
+                    }
+                });
+                $('#infocancel').html($cancel);
+                $('#infototal').html($total);
+                $('#infook').html($ok);
+            },
+            reloadDistrict: function ($ob) {
+                var $data = [];
+                if ($cities[$ob.val()]) {
+                    $data = $cities[$ob.val()].districts;
+                };
+                TELE.renderSelect($('select.district[hk-data-id=' + $ob.attr('hk-data-id') + ']'), $data);
+                TELE.reloadWard($('select.district[hk-data-id=' + $ob.attr('hk-data-id') + ']'), $data);
+                $('select.district[hk-data-id=' + $ob.attr('hk-data-id') + ']').unbind('change').change(function () {
+                    var $district = $(this);
+                    BAJAX.send($district.attr('hk-data-url'), {
+                        'id': $district.attr('hk-data-id'),
+                        'val': $district.val()
+                    }, function (data2) {
+                        if (BCOMMON.isOk(data2)) {
+                            TELE.reloadWard($district, $data);
+                            return;
+                        }
+                        BALERT.showError(data2);
+                    }, 'POST');
+                });
+            },
+            reloadWard: function ($ob, $ds) {
+                var $data = [];
+                if ($ds[$ob.val()]) {
+                    $data = $ds[$ob.val()].wards;
+                };
+                TELE.renderSelect($('select.ward[hk-data-id=' + $ob.attr('hk-data-id') + ']'), $data);
+                $('select.ward[hk-data-id=' + $ob.attr('hk-data-id') + ']').unbind('change').change(function () {
+                    var $ward = $(this);
+                    BAJAX.send($ward.attr('hk-data-url'), {
+                        'id': $ward.attr('hk-data-id'),
+                        'val': $ward.val()
+                    }, function (data2) {
+                        if (BCOMMON.isOk(data2)) {
+                            return;
+                        }
+                        BALERT.showError(data2);
+                    }, 'POST');
+                });
+            },
+            renderSelect: function ($ob, $data) {
+                $ob.html('');
+                var $select = '';
+                $ob.append('<option value="-1" >--Chọn--</option>');
+                $.each($data, function ($i, $item) {
+                    $select = '';
+                    if ($item.name == $ob.attr('hk-data-selected')) {
+                        $select = 'selected';
+                    }
+                    $ob.append('<option value="' + $item.id + '" ' + $select + '>' + $item.name + '</option>');
+                });
+            },
+            renderCity: function ($ob) {
+                TELE.renderSelect($ob, $cities);
+                TELE.reloadDistrict($ob);
+            },
+            isStatus: function (status, call_times) {
+                if (status === '_ORDER_STATUS_WAITING' || status === '_ORDER_STATUS_OK' || status === '_ORDER_STATUS_CANCEL') {
+                    return true;
+                }
+                for (var i = 1; i <= call_times; i++) {
+                    if (status === ('_ORDER_STATUS_CALLING_' + i)) {
+                        return true;
+                    }
+                }
+                return false;
+            },
+            renderStatus: function (status, id, call_times) {
+                $str = '<select id="" class="order-status" hk-data-id="' + id + '">';
+                for (var i = 0; i < $status.length; i++) {
+                    if (TELE.isStatus($status[i].id, call_times)) {
+                        $str += '<option value="' + $status[i].id + '" ' + (
+                        $status[i].id == status ? 'selected' : ''
+                    ) + '>' + $status[i].name + '</option>';
+                    }
+                }
+                $str += '</select>';
+                return $str;
+            },
+            render: function ($ob, data) {
+                $ob.html('');
+                var $ok = 0;
+                var $cancel = 0;
+                var $class = '';
+                for (var i = 0; i < data.length; i++) {
+                    $class = '';
+                    if (data[i].order_status === '_ORDER_STATUS_OK') {
+                        $ok += 1;
+                        $class = 'success';
+                    }
+                    if (data[i].order_status === '_ORDER_STATUS_CANCEL') {
+                        $cancel += 1;
+                        $class = 'cancel';
+                    }
+
+                    var $str = '<tr class="' + $class + '">';
+                    $str += '<td>' + (i + 1) + '</td>';
+                    $str += '<td>' + data[i].product_code + '</br>' + data[i].cost + '</td>';
+                    $str += '<td>' + data[i].import_at + '</td>';
+                    $str += '<td><input type="text" class="infofullname" hk-data-id="' + data[i].id + '" value="' + data[i].full_name + '"/></td>';
+                    $str += '<td>' + data[i].phone_number + '<br/>' + data[i].phone_provider + '</td>';
+                    $str += '<td><textarea rows="3" class="infoaddress" hk-data-id="' + data[i].id + '">' + data[i].address + '</textarea></td>';
+                    $str += '<td class="tcity"><select class="city hk-change" hk-data-selected="' + data[i].city + '" hk-data-id="' + data[i].id + '" hk-data-url="/order/update-city"></select>'
+                            + '<br/><select class="district hk-change" hk-data-selected="' + data[i].district + '" hk-data-id="' + data[i].id + '" hk-data-url="/order/update-district"></select>'
+                            + '<br/><select class="ward hk-change" hk-data-selected="' + data[i].ward + '" hk-data-id="' + data[i].id + '" hk-data-url="/order/update-ward"></select></td>';
+                    $str += '<td>' + TELE.renderStatus(data[i].order_status, data[i].id, data[i].call_times) + '</td>';
+                    $str += '<td><textarea rows="3" class="inforemark" hk-data-id="' + data[i].id + '">' + data[i].remark + '</textarea></td>';
+                    $str += '</tr>';
+                    $ob.append($str);
+                }
+                TELE.updateInfo();
+                TELE.reInit();
+            },
+            renderCalling: function (data) {
+                var $ob = $('#tbl-calling');
+                TELE.render($ob, data);
+            }
+
+        }
+    </script>
+{% endblock %}

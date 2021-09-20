@@ -1,0 +1,7 @@
+twig:
+    default_path: '%kernel.project_dir%/src/HK/Template'
+    debug: '%kernel.debug%'
+    strict_variables: '%kernel.debug%'
+    form_themes:
+        - 'admin/common/forms/formHorizal.html.twig'
+    #exception_controller: HK\AppBundle\Controller\ErrorExceptionController:showError

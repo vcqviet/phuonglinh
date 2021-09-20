@@ -1,0 +1,84 @@
+hk_admin_login:
+    path: /login
+    controller: HK\AdminBundle\Controller\SecurityController::adminLogin
+hk_admin_forgot:
+    path: /forgot-password
+    controller: HK\AdminBundle\Controller\SecurityController::adminForgot
+hk_admin_reset:
+    path: /reset-password/{recover}
+    controller: HK\AdminBundle\Controller\SecurityController::adminReset
+    defaults:
+        recover: ''
+hk_admin_dashboard:
+    path: /dashboard
+    controller: HK\AdminBundle\Controller\DashBoardController::index
+hk_admin_logout:
+    path: /logout
+    controller: HK\AdminBundle\Controller\SecurityController::adminLogout
+hk_admin_language:
+    path: /language/all
+    controller: HK\AdminBundle\Controller\ApiController::allLanguages
+#ADMIN USER
+hk_admin.adminuser:
+    path: /admin-user/{page}/{limit}
+    controller: HK\AdminBundle\Controller\AdminUserController::index
+    defaults:
+        page: 1
+        limit: 20
+    requirements:
+        page: \d+
+        limit: \d+
+hk_admin.adminuser.security_change_password:
+    path: /admin-user/security-change-password
+    controller: HK\AdminBundle\Controller\AdminUserController::securityChangePassword
+hk_admin.adminuser.filter:
+    path: /admin-user/filter/{page}/{limit}
+    controller: HK\AdminBundle\Controller\AdminUserController::filter
+    defaults:
+        page: 1
+        limit: 20
+    requirements:
+        page: \d+
+        limit: \d+
+hk_admin.adminuser.filter_form:
+    path: /admin-user/filter-form
+    controller: HK\AdminBundle\Controller\AdminUserController::filterForm
+hk_admin.adminuser.menu_control:
+    path: /admin-user/menu-control
+    controller: HK\AdminBundle\Controller\AdminUserController::menuControl
+hk_admin.adminuser.add:
+    path: /admin-user/add
+    controller: HK\AdminBundle\Controller\AdminUserController::addEditAdminUser
+hk_admin.adminuser.order:
+    path: /admin-user/set-order
+    controller: HK\AdminBundle\Controller\AdminUserController::order
+    methods:
+    - POST
+hk_admin.adminuser.edit:
+    path: /admin-user/edit/{id}
+    controller: HK\AdminBundle\Controller\AdminUserController::addEditAdminUser
+    defaults:
+        id: -1
+hk_admin.adminuser.publish:
+    path: /admin-user/publish
+    controller: HK\AdminBundle\Controller\AdminUserController::publish
+    methods:
+    - POST
+hk_admin.adminuser.delete:
+    path: /admin-user/delete
+    controller: HK\AdminBundle\Controller\AdminUserController::delete
+    methods:
+    - POST
+hk_admin.adminuser.email_existing:
+    path: /admin-user/email-existing
+    controller: HK\AdminBundle\Controller\AdminUserController::emailExisting
+    methods:
+    - POST
+hk_admin.adminuser.phone_number_existing:
+    path: /admin-user/phone-number-existing
+    controller: HK\AdminBundle\Controller\AdminUserController::phoneNumberExisting
+    methods:
+    - POST
+hk_admin_prelogin:
+    path: /
+    controller: HK\AdminBundle\Controller\SecurityController::preLogin

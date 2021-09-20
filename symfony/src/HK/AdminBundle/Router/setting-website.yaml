@@ -1,0 +1,3 @@
+hk_admin.settingwebsite:
+    path: /setting-website
+    controller: HK\AdminBundle\Controller\SettingWebsiteController::indexSetting

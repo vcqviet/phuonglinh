@@ -1,0 +1,3 @@
+hk_admin.admintranslator:
+    path: /website-translator
+    controller: HK\AdminBundle\Controller\AdminTranslatorController::indexTranslation

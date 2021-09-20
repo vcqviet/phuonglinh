@@ -1,0 +1,9 @@
+HK.admin:
+    resource: '@HKAdminBundle/Router/*.yaml'
+    prefix:   /admin
+HK.app:
+    resource: '@HKAppBundle/Router/*.yaml'
+    prefix:   /
+HK.api:
+    resource: '@HKApiBundle/Router/*.yaml'
+    prefix:   /api

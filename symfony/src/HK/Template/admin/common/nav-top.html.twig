@@ -1,0 +1,25 @@
+<!-- Top Navbar -->
+<nav class="navbar navbar-expand-xl navbar-light fixed-top hk-navbar">
+    <a id="navbar_toggle_btn" class="navbar-toggle-btn nav-link-hover" href="javascript:void(0);"><span class="feather-icon"><i data-feather="menu"></i></span></a>
+    <a class="navbar-brand" href="//geekhubsolution.com" title="HK" target="_blank">
+        HK
+    </a>
+    <ul class="navbar-nav hk-navbar-content">
+        <li class="nav-item dropdown dropdown-authentication">
+            <a class="nav-link dropdown-toggle no-caret" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <div class="media">
+                    
+                    <div class="media-body">
+                        <span>{{app.user.emailAddress}}<i class="zmdi zmdi-chevron-down"></i></span>
+                    </div>
+                </div>
+            </a>
+            <div class="dropdown-menu dropdown-menu-right" data-dropdown-in="flipInX" data-dropdown-out="flipOutX">
+                <a class="dropdown-item" href="{{path('hk_admin.adminuser.security_change_password')}}"><i class="dropdown-icon zmdi zmdi-account"></i><span>{{'lbl.user.change-password'|trans}}</span></a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="{{path('hk_admin_logout')}}"><i class="dropdown-icon zmdi zmdi-power"></i><span>{{'lbl.user.logout'|trans}}</span></a>
+            </div>
+        </li>
+    </ul>
+</nav>
+<!-- /Top Navbar -->

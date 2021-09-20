@@ -1,0 +1,39 @@
+hk_admin.settingmailtemplate:
+    path: /setting-mail-template/{page}/{limit}
+    controller: HK\AdminBundle\Controller\SettingMailTemplateController::index
+    defaults:
+        page: 1
+        limit: 20
+    requirements:
+        page: \d+
+        limit: \d+
+hk_admin.settingmailtemplate.filter:
+    path: /setting-mail-template/filter/{page}/{limit}
+    controller: HK\AdminBundle\Controller\SettingMailTemplateController::filter
+    defaults:
+        page: 1
+        limit: 20
+    requirements:
+        page: \d+
+        limit: \d+
+hk_admin.settingmailtemplate.lang_item:
+    path: /setting-mail-template/item-lang
+    controller: HK\AdminBundle\Controller\SettingMailTemplateController::itemLang
+hk_admin.settingmailtemplate.filter_form:
+    path: /setting-mail-template/filter-form
+    controller: HK\AdminBundle\Controller\SettingMailTemplateController::filterForm
+hk_admin.settingmailtemplate.menu_control:
+    path: /setting-mail-template/menu-control
+    controller: HK\AdminBundle\Controller\SettingMailTemplateController::menuControl
+
+hk_admin.settingmailtemplate.edit:
+    path: /setting-mail-template/edit/{id}
+    controller: HK\AdminBundle\Controller\SettingMailTemplateController::addEdit
+    defaults:
+        id: -1
+
+hk_admin.settingmailtemplate.delete:
+    path: /setting-mail-template/delete
+    controller: HK\AdminBundle\Controller\SettingMailTemplateController::delete
+    methods:
+    - POST

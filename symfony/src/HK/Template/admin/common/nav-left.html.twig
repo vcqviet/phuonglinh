@@ -1,0 +1,58 @@
+<!-- Vertical Nav -->
+<nav class="hk-nav hk-nav-dark">
+    <a href="javascript:void(0);" id="hk_nav_close" class="hk-nav-close"><span class="feather-icon"><i data-feather="x"></i></span></a>
+    <div class="nicescroll-bar">
+        <div class="navbar-nav-wrap">
+        {% for menu in menus %}
+            {% if menu.type is defined and menu.type == 'session' %}
+                <hr class="nav-separator">
+                <div class="nav-header">
+                    <span>{{menu.text|trans}}</span>
+                    <span>{{menu.text|trans}}</span>
+                </div>
+            {% endif %}
+            <ul class="navbar-nav flex-column">
+            {% if menu.type is not defined or menu.type == 'menu'%} 
+                <li class="nav-item">
+                    <a class="nav-link" href="{{menu.url}}">
+                        <span class="feather-icon"><i data-feather="{{menu.icon}}"></i></span>
+                        <span class="nav-link-text">{{menu.text|trans}}</span>
+                    </a>
+                </li>
+            {% else %}
+                {% for menu2 in menu.menu %}
+                    {% if menu2.type is defined and menu2.type == 'group' %}
+                        <li class="nav-item">
+                            <a class="nav-link" href="javascript:void(0);" data-toggle="collapse" data-target="#{{menu2.text}}">
+                                <span class="feather-icon"><i data-feather="{{menu2.icon}}"></i></span>
+                                <span class="nav-link-text">{{menu2.text|trans}}</span>
+                            </a>
+                            <ul id="{{menu2.text}}" class="nav flex-column collapse collapse-level-1">
+                                <li class="nav-item">
+                                    <ul class="nav flex-column">
+                                    {% for menu3 in menu2.menu %}
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="{{menu3.url}}">{{menu3.text|trans}}</a>
+                                        </li>
+                                    {% endfor %}
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                    {% else %}
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{menu2.url}}">
+                                <span class="feather-icon"><i data-feather="{{menu2.icon}}"></i></span>
+                                <span class="nav-link-text">{{menu2.text|trans}}</span>
+                            </a>
+                        </li>
+                    {% endif %}
+                {% endfor %}
+            {% endif %}
+            </ul>
+        {% endfor %}
+        </div>
+    </div>
+</nav>
+<div id="hk_nav_backdrop" class="hk-nav-backdrop"></div>
+<!-- /Vertical Nav -->

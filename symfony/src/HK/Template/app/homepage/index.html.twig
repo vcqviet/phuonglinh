@@ -1,0 +1,29 @@
+{% extends 'app/master/layout.html.twig' %}
+{% block body_content %}
+<section class="mainer">
+    <h3  style="margin:50px auto 0px; width: 90%; text-align: center ">Telesale Management</h3>
+    <div class="box-login" style="margin:20px auto; width: 400px; background: #fff; padding: 25px; border-radius: 5px; border: 2px solid #ccc">
+        <form name="" id="rb-form-login" action="/" method="post">
+            <div class=" form-group">
+                <label for="asspercent">Số điện thoại</label>
+                <input type="text" name="phonenumber" id="phonenumber" class="form-control rb-check" rb-validate-required="1" rb-validate-required-error="Nhập số điện thoại"/>
+            </div>
+            <div class=" form-group">
+                <button id="" class="btn btn-primary rb-form" rb-ref-id="rb-form-login" rb-data-url="/" rb-form-is-multipart="0" rb-callback-after="__calback_login">Login</button>
+            </div>
+        </form>
+    </div>
+</section>
+{% endblock %}
+{% block script %}
+<<script type="text/javascript">
+function __calback_login(data) {
+    if(BCOMMON.isOk(data)) {
+        window.location = '/telesale-management';
+        return;
+    }
+    BALERT.showError(data);
+}
+</script>
+{% endblock %}
+

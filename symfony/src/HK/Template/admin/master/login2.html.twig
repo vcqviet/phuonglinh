@@ -1,0 +1,77 @@
+{% spaceless %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+        <title>
+            {% block page_title %}
+                {{'lbl.admin-title'|trans}}
+            {% endblock %}
+        </title>
+        <meta content="HK" name="description"/>
+
+        <!-- Favicon -->
+        <link href="cms-favicon.ico" rel="shortcut icon"/>
+        <link href="cms-favicon.ico" rel="icon" type="image/x-icon"/>
+
+        <!-- Toggles CSS -->
+        <link href="/assets/plugins/jquery-toggles/css/toggles.css" rel="stylesheet" type="text/css"/>
+        <link href="/assets/plugins/jquery-toggles/css/themes/toggles-light.css" rel="stylesheet" type="text/css"/>
+
+        <!-- Toastr CSS -->
+        <link href="/assets/plugins/jquery-toast-plugin/dist/jquery.toast.min.css" rel="stylesheet" type="text/css"/>
+
+        <!-- Custom CSS -->
+        <link href="/assets/admin/css/style.css" rel="stylesheet" type="text/css"/>
+
+        <link href="/assets/admin/css/theme-custom.css" rel="stylesheet" type="text/css"/>
+
+        <link href="/assets/admin/css/common.css" rel="stylesheet" type="text/css"/>
+
+        {% block css %}{% endblock %}
+    </head>
+    <body>
+        {# <div class="preloader-it" style="backgroud: none">
+            <div class="loader-pendulums"></div>
+        </div> #}
+        <!-- HK Wrapper -->
+        <div class="hk-wrapper">
+            <!-- Main Content -->
+            {% block body %} {% endblock %}
+            <!-- /Main Content -->
+        </div>
+        <!-- jQuery -->
+        <script src="/assets/plugins/jquery-3.4.0/dist/jquery.min.js"></script>
+
+        <!-- Bootstrap Core JavaScript -->
+        <script src="/assets/plugins/popper.js/dist/umd/popper.min.js"></script>
+        <script src="/assets/plugins/bootstrap-4.3.1/dist/js/bootstrap.min.js"></script>
+
+        <!-- Slimscroll JavaScript -->
+        <script src="/assets/admin/js/jquery.slimscroll.js"></script>
+
+        <!-- Fancy Dropdown JS -->
+        <script src="/assets/admin/js/dropdown-bootstrap-extended.js"></script>
+
+        <!-- FeatherIcons JavaScript -->
+        <script src="/assets/admin/js/feather.min.js"></script>
+
+        <!-- Toggles JavaScript -->
+        <script src="/assets/plugins/jquery-toggles/toggles.min.js"></script>
+        <!-- Toastr JS -->
+        <script src="/assets/plugins/jquery-toast-plugin/dist/jquery.toast.min.js"></script>
+
+        <!-- CKEditor -->
+        <script src="/assets/plugins/ckeditor4/ckeditor.js"></script>
+
+        <script src="/assets/admin/js/hk-init-min.js"></script>
+        <script src="/assets/admin/js/hk-data-min.js"></script>
+        <script src="/assets/admin/js/hk-common-min.js"></script>
+        <script src="/assets/admin/js/hk-jgrid-min.js"></script>
+        <script src="/assets/admin/js/hk-admin-min.js"></script>
+
+        {% block script %}{% endblock %}
+    </body>
+</html>
+{% endspaceless %}

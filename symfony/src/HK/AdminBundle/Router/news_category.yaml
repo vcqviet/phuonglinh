@@ -1,0 +1,53 @@
+hk_admin.newscategory:
+    path: /news-category/{page}/{limit}
+    controller: HK\AdminBundle\Controller\NewsCategoryController::index
+    defaults:
+        page: 1
+        limit: 20
+    requirements:
+        page: \d+
+        limit: \d+
+hk_admin.newscategory.filter:
+    path: /news-category/filter/{page}/{limit}
+    controller: HK\AdminBundle\Controller\NewsCategoryController::filter
+    defaults:
+        page: 1
+        limit: 20
+    requirements:
+        page: \d+
+        limit: \d+
+hk_admin.newscategory.lang_item:
+    path: /news-category/item-lang
+    controller: HK\AdminBundle\Controller\NewsCategoryController::itemLang
+hk_admin.newscategory.filter_form:
+    path: /news-category/filter-form
+    controller: HK\AdminBundle\Controller\NewsCategoryController::filterForm
+hk_admin.newscategory.menu_control:
+    path: /news-category/menu-control
+    controller: HK\AdminBundle\Controller\NewsCategoryController::menuControl
+hk_admin.newscategory.add:
+    path: /news-category/add
+    controller: HK\AdminBundle\Controller\NewsCategoryController::addEdit
+hk_admin.newscategory.order:
+    path: /news-category/set-order
+    controller: HK\AdminBundle\Controller\NewsCategoryController::order
+    methods:
+    - POST
+hk_admin.newscategory.edit:
+    path: /news-category/edit/{id}
+    controller: HK\AdminBundle\Controller\NewsCategoryController::addEdit
+    defaults:
+        id: -1
+hk_admin.newscategory.publish:
+    path: /news-category/publish
+    controller: HK\AdminBundle\Controller\NewsCategoryController::publish
+    methods:
+    - POST
+hk_admin.newscategory.delete:
+    path: /news-category/delete
+    controller: HK\AdminBundle\Controller\NewsCategoryController::delete
+    methods:
+    - POST
+hk_admin.newscategory.title-existing:
+    path: /news-category/title-existing
+    controller: HK\AdminBundle\Controller\NewsCategoryController::titleLangExisting

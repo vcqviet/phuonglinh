@@ -1,0 +1,44 @@
+parameters:
+    # Adds a fallback DATABASE_URL if the env var is not set.
+    # This allows you to run cache:warmup even if your
+    # environment variables are not available yet.
+    # You should not need to change this value.
+    env(DB_HOST): ""
+    env(DB_PORT): ""
+    env(DB_NAME): ""
+    env(DB_USER): ""
+    env(DB_USER_PASSWORD): ""
+doctrine:
+    dbal:
+        # configure these for your database server
+        default_connection: HK
+        connections:
+            HK:
+                schema_filter: ~^(?![sessions])~
+                driver: "pdo_mysql"
+                server_version: "5.7"
+                charset: utf8mb4
+                default_table_options:
+                    charset: utf8mb4
+                    collate: utf8mb4_unicode_ci
+                mapping_types:
+                    enum: string
+                url: "mysql://%env(resolve:DB_USER)%:%env(resolve:DB_USER_PASSWORD)%@%env(resolve:DB_HOST)%:%env(resolve:DB_PORT)%/%env(resolve:DB_NAME)%"
+    orm:
+        auto_generate_proxy_classes: true
+        default_entity_manager: HK
+        entity_managers:
+            HK:
+                dql:
+                    datetime_functions:
+                        DATE: DoctrineExtensions\Query\Mysql\Date
+                connection: HK
+                naming_strategy: doctrine.orm.naming_strategy.underscore
+                auto_mapping: true
+                mappings:
+                    HK:
+                        is_bundle: false
+                        type: annotation
+                        dir: "%kernel.project_dir%/src/HK/CoreBundle/Entity"
+                        prefix: 'HK\CoreBundle\Entity'
+                        alias: HK
